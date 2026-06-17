@@ -90,14 +90,7 @@ export default function Navbar() {
               Portfolios
             </Link>
 
-            <nav className="flex items-center gap-2">
-              <Link
-                href="/"
-                className="rounded-lg bg-white/5 px-3 py-2 text-sm font-medium text-slate-200 ring-1 ring-white/10"
-              >
-                Profiles
-              </Link>
-            </nav>
+            <div />
           </div>
         </Container>
       </header>
@@ -144,6 +137,13 @@ export default function Navbar() {
                 </Link>
               );
             })}
+
+            <Link
+              href="/"
+              className="rounded-lg px-3 py-2 text-sm font-medium text-slate-300 transition hover:bg-white/5 hover:text-white"
+            >
+              Portfolios
+            </Link>
           </nav>
         </div>
       </Container>
