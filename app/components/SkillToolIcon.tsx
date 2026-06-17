@@ -1,6 +1,6 @@
 import {
   SiHtml5,
-  SiCss3,
+  SiCss,
   SiJavascript,
   SiTypescript,
   SiTailwindcss,
@@ -56,7 +56,7 @@ const ICONS: Record<
   { Icon: React.ComponentType<{ className?: string }>; className: string }
 > = {
   html: { Icon: SiHtml5, className: "text-orange-500" },
-  css: { Icon: SiCss3, className: "text-sky-500" },
+  css: { Icon: SiCss, className: "text-sky-500" },
   javascript: { Icon: SiJavascript, className: "text-yellow-400" },
   typescript: { Icon: SiTypescript, className: "text-blue-500" },
   tailwind: { Icon: SiTailwindcss, className: "text-cyan-400" },
