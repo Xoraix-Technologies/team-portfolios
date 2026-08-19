@@ -90,7 +90,10 @@ export type Project = {
     | "Mobile app"
     | "Library"
     | "AI SaaS"
-    | "Social Platform";
+    | "Social Platform"
+    | "Business Development"
+    | "Client Acquisition"
+    | "Lead Generation";
   title: string;
   description: string;
   projectDesc?: string;
@@ -329,6 +332,80 @@ export const USERS: UserData[] = [
       description:
         "Here are some of the projects I've worked on, showcasing my skills in various technologies.",
       items: [
+        {
+          id: "aimyable-dashboard",
+          category: "AI SaaS",
+          title: "Aimyable",
+          projectTitle:
+            "Aimyable - AI-Powered Accounts Payable Automation SaaS",
+          projectChallenges: [
+            "Coordinating multi-step invoice automation across specialized AI agents, database operations, and RPA-driven UI actions.",
+            "Extracting structured invoice data from documents so information could flow into the system without manual entry.",
+            "Supporting secure multi-tenant onboarding, provisioning, role-based access, invitations, and machine-to-machine authentication.",
+            "Keeping backend services, data models, frontend workflows, and Windows RPA execution synchronized in a production SaaS environment.",
+          ],
+          projectSolutions: [
+            "Built a multi-agent workflow engine with specialized Step, DB, and RPA agents for multi-step invoice automation.",
+            "Worked on invoice ingestion and data extraction using the Google Cloud Vision Python SDK to OCR invoice documents and parse structured fields.",
+            "Built an orchestration layer connecting database operations with RPA-driven UI actions over WebSockets for real-time task dispatch and status updates.",
+            "Implemented invitation-based registration, token validation, RBAC, user-tenant linkage, onboarding, password gating, session refresh, machine-to-machine authentication, normalized PostgreSQL schemas, and core REST APIs.",
+            "Contributed to the Next.js onboarding and admin experience using Material UI and React Hook Form, with the platform containerized in Docker and deployed on AWS.",
+          ],
+          description:
+            "An AI-powered accounts-payable automation SaaS built with Django DRF, Next.js, TypeScript, PostgreSQL, Docker, and AWS. The platform combines multi-agent orchestration, invoice OCR and document processing, database automation, RPA-driven UI actions over WebSockets, multi-tenant authentication and RBAC, and self-service onboarding workflows to automate accounts-payable tasks end to end.",
+          tags: [
+            "Django DRF",
+            "Next.js",
+            "TypeScript",
+            "PostgreSQL",
+            "Docker",
+            "AWS",
+            "Agentic AI",
+            "Google Cloud Vision",
+            "WebSockets",
+          ],
+          image: "/images/arslan-projects-images/aimyable.png",
+          sourceUrl: "#",
+        },
+        {
+          id: "udu-platform",
+          category: "Social Platform",
+          title: "UDU",
+          projectTitle:
+            "UDU - Community Platform for Creating, Connecting & Contributing",
+
+          projectChallenges: [
+            "Designing a platform where users can easily create UDUs around topics and interests that matter to them.",
+            "Building a seamless social experience that allows users to discover UDUs, connect with others, and build meaningful communities.",
+            "Creating contribution workflows that help users share content with relevant audiences while keeping interactions simple and intuitive.",
+            "Implementing secure and flexible authentication with multiple sign-in options while maintaining a smooth onboarding experience.",
+          ],
+
+          projectSolutions: [
+            "Built a centralized platform that allows users to create and manage UDUs around their interests, topics, and communities.",
+            "Implemented user connection and community features that enable users to discover UDUs, connect with people, and expand their network.",
+            "Developed contribution workflows that allow users to publish and share content with audiences interested in specific UDUs.",
+            "Implemented secure authentication with username/email and password login, password recovery, email-code authentication, Google sign-in, and account registration.",
+            "Created a responsive and user-friendly interface focused on the platform's three core experiences: Create, Connect, and Contribute.",
+          ],
+
+          description:
+            "UDU is a community-driven social platform designed around three core experiences: Create, Connect, and Contribute. Users can create UDUs based on topics that matter to them, connect their UDUs with others to build communities and relationships, and contribute content to reach relevant audiences. The platform includes secure account authentication, social login, user onboarding, community discovery, and content contribution workflows within a modern and responsive web experience.",
+
+          tags: [
+            "Web Application",
+            "Social Platform",
+            "Community Platform",
+            "Authentication",
+            "Google OAuth",
+            "User Onboarding",
+            "Content Sharing",
+            "Responsive UI",
+          ],
+
+          image: "/images/arslan-projects-images/udu.png",
+          sourceUrl: "#",
+        },
         {
           id: "sweet-celebrationz",
           category: "Ecommerce",
@@ -1242,157 +1319,232 @@ export const USERS: UserData[] = [
     slug: "syed-farhan-saeed",
 
     hero: {
-      pill: "Frontend Engineer (React, Next.js)",
+      pill: "Business Development Executive | B2B Lead Generation",
       name: "Syed Farhan Saeed",
-      mainTitle: "Frontend Engineer",
-      subtitle: "React, Next.js & TypeScript (with Full-Stack Experience)",
+      mainTitle: "Business Development Executive",
+      subtitle: "B2B Lead Generation, Client Acquisition & Tech Services Sales",
       shortIntro:
-        "Crafting innovative, high-performance web applications with React, Next.js, and Node.js—turning ideas into reality through modern technologies and clean code.",
-      techPills: ["Next.js", "React", "TypeScript", "Tailwind CSS", "MUI"],
+        "Results-driven business development professional with 3+ years of experience generating qualified B2B leads, acquiring international clients, managing sales pipelines, and selling full-stack, cloud, and AI/automation services for IT and technology companies.",
+      techPills: [
+        "LinkedIn Sales Navigator",
+        "Upwork",
+        "B2B Lead Generation",
+        "Client Acquisition",
+        "AI & Automation",
+      ],
       ctaText: "View My Work",
-      cvText: "CV Not Available",
-      resumeUrl: "/resumes/syed-farhan-saeed.pdf",
-      resumeFileName: "syed-farhan-saeed.pdf",
+      cvText: "CV Available",
+      resumeUrl: "/resumes/syed-farhan.pdf",
+      resumeFileName: "syed-farhan.pdf",
     },
 
     about: {
       name: "Syed Farhan Saeed",
-      roleTitle: "Front-End / Full-Stack Web Developer",
+      roleTitle: "Business Development Executive | B2B Lead Generation",
       imageSrc: "/images/about1.jpg",
       about1:
-        "I am a dedicated Front-End / Full-Stack Web Developer specializing in building dynamic, responsive, and user-friendly web applications. With hands-on experience in modern React ecosystems, I deliver polished UI, clean architecture, and scalable features using technologies like React, Next.js, TypeScript, and Node.js.",
+        "I am a Business Development Executive with 3+ years of experience in B2B lead generation, client acquisition, pipeline management, and digital marketing within the IT and technology sector. I work across LinkedIn Sales Navigator, Upwork, cold outreach, and multiple lead-generation platforms to identify prospects, build relationships, and create qualified sales opportunities.",
       about2:
-        "My passion lies in developing efficient, high-performance, and visually compelling experiences that enhance user value. I believe in clean code, smart design, and collaborative development practices. I focus on performance, accessibility, and maintainability so products stay fast and easy to evolve.",
+        "I specialize in pitching and closing technology services including Python/Django, MERN, React, Next.js, Node.js, cloud platforms such as AWS, Azure, and GCP, and AI/automation solutions including n8n, Voice Agents, and MCP integrations. My experience also includes market research, CRM and pipeline management, proposal writing, social media marketing, resource coordination, and long-term client relationship management.",
       skillsLeft: [
-        { name: "React", percent: 95, iconKey: "react" },
-        { name: "Node", percent: 80, iconKey: "code" },
-        { name: "GitHub", percent: 90, iconKey: "github" },
-        { name: "Tailwind", percent: 80, iconKey: "palette" },
+        { name: "B2B Lead Generation", percent: 95, iconKey: "react" },
+        { name: "LinkedIn Sales Navigator", percent: 90, iconKey: "github" },
+        { name: "Upwork Bidding", percent: 90, iconKey: "code" },
+        { name: "Client Acquisition", percent: 90, iconKey: "palette" },
       ],
       skillsRight: [
-        { name: "Next", percent: 80, iconKey: "db" },
-        { name: "MongoDB", percent: 85, iconKey: "db" },
-        { name: "MUI", percent: 80, iconKey: "brackets" },
-        { name: "Redux", percent: 70, iconKey: "db" },
+        { name: "Pipeline Management", percent: 85, iconKey: "db" },
+        { name: "Cold Outreach", percent: 85, iconKey: "brackets" },
+        { name: "Market Research", percent: 80, iconKey: "db" },
+        { name: "Digital Marketing", percent: 80, iconKey: "palette" },
       ],
       experience: [
         {
-          title: "Frontend Engineer (React, Next.js)",
-          company: "STech Experts",
-          date: "Mar 2025",
+          title: "Business Development Executive",
+          company: "Xoraix Technologies",
+          date: "Jan 2026 – Present",
           bullets: [
-            "Build and ship modern web apps using Next.js, React, and TypeScript with reusable UI components.",
-            "Improve performance, accessibility, and SEO through clean architecture, best practices, and code reviews.",
+            "Drive B2B lead generation through LinkedIn Sales Navigator, Upwork, and targeted cold outreach campaigns to consistently build a qualified sales pipeline.",
+            "Generate $5,000+ in monthly revenue through new client acquisition and account management.",
+            "Pitch and close projects across Python/Django, JavaScript/TypeScript, React, Next.js, Node.js, MERN, AWS, Azure, GCP, and AI/automation services including n8n, Voice Agents, and MCP integrations.",
+            "Conduct resource interviews and manage the internal talent pipeline to align delivery capacity with incoming project demand.",
+            "Develop outreach strategies for full-stack, front-end, back-end, cloud, DevOps, and AI services for international clients.",
+          ],
+        },
+        {
+          title: "Business Development Executive",
+          company: "Game Chaser Studio",
+          date: "Feb 2025 – Dec 2025",
+          bullets: [
+            "Spearheaded client acquisition strategy, securing 5+ new project contracts and contributing to a 30% expansion in the active client base.",
+            "Built and managed a B2B lead pipeline through LinkedIn Sales Navigator, Upwork, Crunchbase, and event-based lead-generation platforms.",
+            "Aligned cross-functional teams with business development goals and helped maintain 100% client satisfaction across active projects.",
+          ],
+        },
+        {
+          title: "Associate Business Developer",
+          company: "Dev Console",
+          date: "Feb 2024 – Jan 2025",
+          bullets: [
+            "Generated a consistent pipeline of qualified US IT-market prospects through LinkedIn Premium, Sales Navigator, and 10+ lead-generation platforms.",
+            "Managed end-to-end Upwork bidding, including opportunity research, tailored proposals, and identification of high-value freelance projects.",
+            "Managed LinkedIn, Facebook, and Instagram content and campaigns to support brand awareness, hiring, and promotional activities.",
+            "Conducted competitor and market research to improve outreach messaging and lead-to-meeting conversion.",
+            "Maintained professional client communication to support retention and repeat referral business.",
           ],
         },
       ],
     },
 
     tech: {
-      heading: "Technologies I Work With",
+      heading: "Platforms, Services & Tools I Work With",
       description:
-        "I'm proficient in a variety of modern technologies to build robust and scalable applications.",
+        "A business development toolkit focused on lead generation, client acquisition, technology-services sales, digital marketing, analytics, and cross-functional collaboration.",
       techs: [
         {
-          title: "React",
-          description: "A JavaScript library for building user interfaces.",
-          iconKey: "layers",
-        },
-        {
-          title: "Next.js",
-          description: "The React framework for production.",
-          iconKey: "layers",
-        },
-        {
-          title: "TypeScript",
+          title: "LinkedIn Sales Navigator",
           description:
-            "Strongly typed programming language that builds on JavaScript.",
+            "Prospect research, targeted B2B lead generation, outreach, and pipeline building for international clients.",
+          iconKey: "layers",
+        },
+        {
+          title: "Upwork",
+          description:
+            "End-to-end opportunity research, bidding, proposal writing, and freelance client acquisition.",
           iconKey: "code",
         },
         {
-          title: "Node.js",
-          description: "JavaScript runtime built on Chrome's V8 engine.",
-          iconKey: "server",
-        },
-        {
-          title: "MongoDB",
-          description: "A powerful, open source database system.",
+          title: "Lead Generation Platforms",
+          description:
+            "Prospecting with Crunchbase, AppSumo, Y Combinator, G2, Yelp, Eventbrite, 10Times, AllEvents, and other lead sources.",
           iconKey: "db",
         },
         {
-          title: "Tailwind CSS",
+          title: "Full-Stack Services",
           description:
-            "A utility-first CSS framework for rapid UI development.",
+            "Selling Python/Django, JavaScript/TypeScript, React, Next.js, Node.js, MERN, front-end, back-end, and full-stack development services.",
+          iconKey: "server",
+        },
+        {
+          title: "Cloud & DevOps",
+          description:
+            "Business development and solution positioning for AWS, Microsoft Azure, Google Cloud Platform, and DevOps services.",
+          iconKey: "server",
+        },
+        {
+          title: "AI & Automation",
+          description:
+            "Selling AI engineering, n8n automation, AI automation solutions, Voice Agents, and MCP integration services.",
+          iconKey: "layers",
+        },
+        {
+          title: "Digital Marketing",
+          description:
+            "Campaign and content work across LinkedIn, Facebook Business Suite, Instagram for Business, Canva, and Adobe tools.",
           iconKey: "palette",
         },
         {
-          title: "Git & GitHub",
-          description: "Version control system and hosting for development.",
-          iconKey: "github",
-        },
-        {
-          title: "Figma",
-          description: "A collaborative interface design tool.",
-          iconKey: "palette",
+          title: "Analytics & CRM",
+          description:
+            "Pipeline management, CRM workflows, Google Analytics, Facebook Insights, Instagram Insights, and market research.",
+          iconKey: "db",
         },
       ],
     },
 
     projects: {
-      heading: "My Projects",
+      heading: "Business Development Highlights",
       description:
-        "Here are some of the projects I've worked on, showcasing my skills in various technologies.",
+        "Selected business development work covering revenue generation, client acquisition, lead-pipeline growth, technology-services sales, and digital outreach.",
       items: [
         {
-          id: "pos",
-          category: "Web app",
-          title: "POS",
-          projectTitle: "POS - Point of Sale System",
+          id: "xoraix-business-development",
+          category: "Business Development",
+          title: "Xoraix Technologies",
+          projectTitle:
+            "Xoraix Technologies - B2B Revenue & Client Acquisition",
           projectChallenges: [
-            "Complex Data Management: Implementing a system capable of handling complex data interactions and real-time inventory management.",
-            "User Experience Design: Developing an intuitive and responsive user interface that could accommodate the extensive features of the POS system without overwhelming users.",
-            "Security and Scalability: Ensuring the security of transactions and data while also providing a system that could scale with Banyo Limited’s growth.",
-            "Integration and Deployment Complexity: Integrating the application with various payment methods and deploying the system on AWS servers for high availability and reliability.",
+            "Building a consistent pipeline of qualified international prospects across highly competitive IT-service categories.",
+            "Positioning a broad service offering spanning full-stack development, cloud and DevOps, and AI/automation solutions.",
+            "Converting outreach into revenue while coordinating available technical resources with incoming client demand.",
           ],
           projectSolutions: [
-            "To address the complex data management and real-time inventory requirements, I designed a robust backend using Django that efficiently handled data interactions and ensured seamless synchronization across the system. For the user experience, I developed a clean and intuitive interface using React and Next.js, organizing features into a user-friendly dashboard that simplified navigation. To ensure security and scalability, I implemented best practices for data protection and optimized the application architecture to support growth. Finally, I integrated various payment gateways and deployed the application on AWS for reliable performance and high availability.",
+            "Used LinkedIn Sales Navigator, Upwork, and targeted cold outreach to identify and engage qualified B2B prospects.",
+            "Developed service-specific outreach strategies for Python/Django, MERN, React, Next.js, Node.js, AWS, Azure, GCP, n8n, Voice Agents, and MCP integrations.",
+            "Managed client acquisition and account relationships that generated $5,000+ in monthly company revenue.",
+            "Supported delivery readiness by interviewing resources and managing the internal talent pipeline.",
           ],
           description:
-            "A point-of-sale and storefront interface to manage products and sales with reusable components and fast workflows.",
-          tags: ["Next.js", "TypeScript", "React", "Tailwind CSS"],
-          image: "/images/abu-bakar-projects-images/POS.jpg",
+            "Led B2B lead generation and client acquisition initiatives for Xoraix Technologies, building qualified sales opportunities across LinkedIn, Upwork, and cold outreach. The work contributed $5,000+ in monthly revenue while positioning full-stack, cloud, DevOps, and AI/automation services for international clients.",
+          tags: [
+            "B2B Lead Generation",
+            "LinkedIn Sales Navigator",
+            "Upwork",
+            "Client Acquisition",
+            "AI Services",
+            "Cloud Services",
+          ],
+          image: "/images/farhan-projects-images/xoraix.png",
           sourceUrl: "#",
         },
 
         {
-          id: "aimyable-dashboard",
-          category: "Web app",
-          title: "Aimyable Dashboard",
-          projectTitle: "Aimyable Dashboard - Product Analytics Platform",
+          id: "game-chaser-client-growth",
+          category: "Client Acquisition",
+          title: "Game Chaser Studio",
+          projectTitle:
+            "Game Chaser Studio - Client Acquisition & Pipeline Growth",
           projectChallenges: [
-            "Performance Optimization: Building a dashboard that can efficiently handle and visualize large datasets in real-time without compromising user experience.",
+            "Expanding the studio's active client base through targeted business development in a competitive services market.",
+            "Building a reliable multi-channel B2B pipeline and maintaining strong communication between sales and delivery teams.",
+            "Supporting client satisfaction while scaling the number of active projects.",
+          ],
+          projectSolutions: [
+            "Built a targeted lead pipeline through LinkedIn Sales Navigator, Upwork, Crunchbase, and event-based prospecting platforms.",
+            "Spearheaded outreach and client-acquisition efforts that secured 5+ new project contracts.",
+            "Worked across teams to align delivery with business development commitments and maintain strong client relationships.",
           ],
           description:
-            "A product analytics dashboard designed to monitor key metrics and performance in one place with role-based access.",
-          tags: ["Next.js", "TypeScript", "React", "Tailwind CSS"],
-          image: "/images/abu-bakar-projects-images/Aimyable.png",
+            "Spearheaded client acquisition at Game Chaser Studio, securing 5+ project contracts and helping expand the active client base by 30%. Built and managed a multi-channel B2B pipeline while coordinating with cross-functional teams to maintain 100% client satisfaction across active projects.",
+          tags: [
+            "Client Acquisition",
+            "Pipeline Management",
+            "LinkedIn",
+            "Upwork",
+            "Crunchbase",
+            "Client Retention",
+          ],
+          image: "/images/farhan-projects-images/gamechaser.png",
           sourceUrl: "#",
         },
+
         {
-          id: "ticksy",
-          category: "Web app",
-          title: "Ticksy",
-          projectTitle: "Ticksy - Customer Support Ticketing System",
+          id: "dev-console-lead-generation",
+          category: "Lead Generation",
+          title: "Dev Console",
+          projectTitle: "Dev Console - US IT Lead Generation & Upwork Growth",
           projectChallenges: [
-            "Complex User Management: Implementing a system that could handle multiple user roles and permissions effectively.",
-            "Scalable Ticketing System: Designing a ticketing system that could scale with increasing support requests and users.",
-            "Real-time Communication: Ensuring real-time updates and notifications for support agents and customers.",
-            "Responsive UI/UX Design: Creating an intuitive interface that was responsive across all devices and screen sizes.",
+            "Finding qualified US-market IT prospects across multiple lead sources and maintaining a consistent opportunity pipeline.",
+            "Identifying high-value freelance opportunities and creating proposals tailored to each client's requirements.",
+            "Improving outreach effectiveness through market research, competitor analysis, and digital brand visibility.",
+          ],
+          projectSolutions: [
+            "Prospected through LinkedIn Premium, Sales Navigator, Crunchbase, G2, AppSumo, Y Combinator, Pitch Ground, Merchant Circle, AllEvents, 10Times, Eventbrite, Yelp, and other platforms.",
+            "Managed end-to-end Upwork bidding and tailored proposal writing to grow the company's freelance client base.",
+            "Used competitor and market research to refine messaging and improve lead-to-meeting conversion.",
+            "Supported brand awareness through LinkedIn, Facebook, and Instagram content, campaigns, and promotional activity.",
           ],
           description:
-            "Ticksy is a ticketing system for customer support and after-sales service for company products like website projects and ready-made themes.",
-          tags: ["Next.js", "TypeScript", "React", "Tailwind CSS"],
-          image: "/images/abu-bakar-projects-images/Ticksy.png",
+            "Built a consistent pipeline of qualified US IT prospects using LinkedIn and 10+ lead-generation platforms while managing end-to-end Upwork bidding and tailored proposals. Supported pipeline growth with market research, social media campaigns, and long-term client communication that encouraged retention and referral business.",
+          tags: [
+            "Lead Generation",
+            "Upwork Bidding",
+            "Proposal Writing",
+            "Market Research",
+            "Digital Marketing",
+            "US IT Market",
+          ],
+          image: "/images/farhan-projects-images/dev-console.png",
           demoUrl: "https://support.ticksy.com/",
           sourceUrl: "#",
         },
@@ -1400,37 +1552,60 @@ export const USERS: UserData[] = [
     },
 
     contact: {
-      email: "farhan@gmail.com",
-      linkedin: "https://linkedin.com/in/syed-farhan-saeed-034231167",
-      github: "https://github.com/Syed-Farhan-Saeed",
+      email: "faani912@gmail.com",
+      linkedin: "https://linkedin.com/in/syed-farhan-saeed-438599142",
+      github: "",
     },
+
     skillsTools: {
       title: "Skills & Tools",
-      tagline: "Learned by coding all night and debugging all day!",
+      tagline:
+        "Turning targeted outreach into qualified opportunities and long-term client relationships.",
       description:
-        "As a full-stack Software Engineer, I specialize in building scalable web applications using modern technologies such as Next.js, React, and Tailwind CSS. I'm also expanding my expertise into DevOps and cloud practices to create efficient, maintainable, robust web solutions.",
+        "I specialize in B2B lead generation, client acquisition, proposal writing, pipeline management, technology-services sales, market research, digital marketing, and cross-functional coordination for IT and technology companies.",
+
       items: [
-        { label: "HTML", iconKey: "html" },
-        { label: "CSS", iconKey: "css" },
-        { label: "JavaScript", iconKey: "javascript" },
-        { label: "TypeScript", iconKey: "typescript" },
-        { label: "Tailwind CSS", iconKey: "tailwind" },
-        { label: "shadcn/ui", iconKey: "shadcn" },
-        { label: "Material UI", iconKey: "mui" },
-        { label: "Framer Motion", iconKey: "framer" },
-        { label: "ReactJS", iconKey: "react" },
-        { label: "Redux", iconKey: "redux" },
-        { label: "NextJS", iconKey: "next" },
-        { label: "NodeJS", iconKey: "node" },
-        { label: "ExpressJS", iconKey: "express" },
-        { label: "MongoDB", iconKey: "mongodb" },
-        { label: "Supabase", iconKey: "supabase" },
-        { label: "Docker", iconKey: "docker" },
-        { label: "Vercel", iconKey: "vercel" },
-        { label: "Git", iconKey: "git" },
-        { label: "GitHub", iconKey: "github" },
-        { label: "Postman", iconKey: "postman" },
-        { label: "npm", iconKey: "npm" },
+        // Lead Generation & Sales
+        { label: "LinkedIn Sales Navigator", iconKey: "github" },
+        { label: "LinkedIn Premium", iconKey: "github" },
+        { label: "Upwork Bidding", iconKey: "code" },
+        { label: "Proposal Writing", iconKey: "code" },
+        { label: "Cold Email Outreach", iconKey: "postman" },
+        { label: "Client Acquisition", iconKey: "react" },
+        { label: "Client Retention", iconKey: "react" },
+        { label: "Pipeline Management", iconKey: "db" },
+        { label: "Market Research", iconKey: "db" },
+
+        // Prospecting Platforms
+        { label: "Crunchbase", iconKey: "db" },
+        { label: "G2.com", iconKey: "db" },
+        { label: "Y Combinator", iconKey: "db" },
+        { label: "AppSumo", iconKey: "db" },
+        { label: "Eventbrite", iconKey: "db" },
+        { label: "Yelp", iconKey: "db" },
+
+        // Tech Services Sold
+        { label: "Python / Django", iconKey: "python" },
+        { label: "React / Next.js", iconKey: "next" },
+        { label: "Node.js / MERN", iconKey: "node" },
+        { label: "AWS", iconKey: "vercel" },
+        { label: "Microsoft Azure", iconKey: "vercel" },
+        { label: "Google Cloud Platform", iconKey: "vercel" },
+        { label: "n8n Automation", iconKey: "code" },
+        { label: "Voice Agents", iconKey: "code" },
+        { label: "MCP Integrations", iconKey: "code" },
+
+        // Marketing & Collaboration
+        { label: "Facebook Business Suite", iconKey: "palette" },
+        { label: "Instagram for Business", iconKey: "palette" },
+        { label: "LinkedIn Campaign Manager", iconKey: "palette" },
+        { label: "Canva", iconKey: "palette" },
+        { label: "Adobe Photoshop", iconKey: "palette" },
+        { label: "Adobe Illustrator", iconKey: "palette" },
+        { label: "Google Analytics", iconKey: "db" },
+        { label: "Trello", iconKey: "db" },
+        { label: "Slack", iconKey: "code" },
+        { label: "Microsoft Teams", iconKey: "code" },
       ],
     },
   },

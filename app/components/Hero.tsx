@@ -9,6 +9,7 @@ type HeroData = {
   techPills: string[];
   ctaText: string;
   cvText: string;
+  resumeUrl?: string;
   resumeFileName?: string; // optional download name
 };
 
@@ -21,8 +22,7 @@ export default function Hero({
   slug: string;
   hasResume: boolean;
 }) {
-  // ✅ Always use slug-based resume file
-  const resumeUrl = `/resumes/${slug}.pdf`;
+  const resumeUrl = hero.resumeUrl ?? `/resumes/${slug}.pdf`;
   const downloadName = hero.resumeFileName ?? `${slug}.pdf`;
 
   // ✅ adjust this based on your real route

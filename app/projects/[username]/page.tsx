@@ -6,7 +6,7 @@ import { useMemo, useState } from "react";
 import Link from "next/link";
 import type { Project } from "@/app/lib/site-data";
 
-type Category = "All" | "Web app";
+type Category = "All" | Project["category"];
 
 export default function ProjectsPage({
   params,
@@ -16,13 +16,18 @@ export default function ProjectsPage({
   const user = getUserByParam(params.username);
   const [active, setActive] = useState<Category>("All");
 
-  const projects = user?.projects.items;
+  const projects = useMemo(() => user?.projects.items ?? [], [user]);
 
   const filtered = useMemo(() => {
-    const PROJECTS = projects ?? [];
-    if (active === "All") return PROJECTS;
-    return PROJECTS.filter((p) => p.category === active);
+    if (active === "All") return projects;
+    return projects.filter((p) => p.category === active);
   }, [active, projects]);
+
+  const categories = useMemo(() => {
+    const set = new Set<Project["category"]>();
+    projects.forEach((p) => set.add(p.category));
+    return ["All", ...Array.from(set)] as Category[];
+  }, [projects]);
 
   if (!user) return null;
 
@@ -47,32 +52,22 @@ export default function ProjectsPage({
         </div>
 
         <div className="mt-12 flex items-center justify-start">
-          <div className="inline-flex overflow-hidden rounded-lg bg-black/40 shadow-[0_10px_30px_rgba(0,0,0,0.35)] ring-1 ring-slate-800/50">
-            <button
-              type="button"
-              onClick={() => setActive("All")}
-              className={[
-                "px-5 py-2 text-sm font-semibold transition",
-                active === "All"
-                  ? "bg-[#5d6bff] text-white"
-                  : "bg-transparent text-slate-300 hover:bg-white/5",
-              ].join(" ")}
-            >
-              All
-            </button>
-
-            <button
-              type="button"
-              onClick={() => setActive("Web app")}
-              className={[
-                "px-5 py-2 text-sm font-semibold transition",
-                active === "Web app"
-                  ? "bg-[#5d6bff] text-white"
-                  : "bg-transparent text-slate-300 hover:bg-white/5",
-              ].join(" ")}
-            >
-              Web app
-            </button>
+          <div className="inline-flex flex-wrap overflow-hidden rounded-lg bg-black/40 shadow-[0_10px_30px_rgba(0,0,0,0.35)] ring-1 ring-slate-800/50">
+            {categories.map((category) => (
+              <button
+                key={category}
+                type="button"
+                onClick={() => setActive(category)}
+                className={[
+                  "px-5 py-2 text-sm font-semibold transition",
+                  active === category
+                    ? "bg-[#5d6bff] text-white"
+                    : "bg-transparent text-slate-300 hover:bg-white/5",
+                ].join(" ")}
+              >
+                {category}
+              </button>
+            ))}
           </div>
         </div>
 

@@ -12,12 +12,12 @@ export default function UserHomePage({
   const user = getUserByParam(params.username);
   if (!user) notFound();
 
-  // ✅ checks: public/resumes/<slug>.pdf
+  const resumeUrl = user.hero.resumeUrl ?? `/resumes/${user.slug}.pdf`;
+
   const resumePath = path.join(
     process.cwd(),
     "public",
-    "resumes",
-    `${user.slug}.pdf`,
+    resumeUrl.replace(/^\/+/, ""),
   );
   const hasResume = fs.existsSync(resumePath);
 

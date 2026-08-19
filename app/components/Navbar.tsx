@@ -7,17 +7,10 @@ import { USERS } from "../lib/site-data";
 
 type NavItem = {
   label: string;
-  kind:
-    | "top"
-    | "about"
-    | "tech"
-    | "skills"
-    | "projects"
-    | "contact";
+  kind: "about" | "tech" | "skills" | "projects" | "contact";
 };
 
 const nav: NavItem[] = [
-  { kind: "top", label: "Home" },
   { kind: "about", label: "About" },
   { kind: "tech", label: "Tech" },
   { kind: "skills", label: "Skills" },
@@ -43,8 +36,6 @@ function getUsernameFromPath(pathname: string): string | null {
 
 function buildHref(kind: NavItem["kind"], username: string) {
   switch (kind) {
-    case "top":
-      return `/${username}#top`;
     case "about":
       return `/${username}#about`;
     case "tech":
@@ -56,21 +47,6 @@ function buildHref(kind: NavItem["kind"], username: string) {
     case "contact":
       return `/${username}#contact`;
   }
-}
-
-function isActive(
-  kind: NavItem["kind"],
-  pathname: string,
-  username: string,
-): boolean {
-  const p = pathname.toLowerCase();
-  const u = username.toLowerCase();
-
-  // Hash navigation isn't included in `usePathname()`, so we only
-  // mark the "home" route active based on pathname.
-  if (kind === "top") return p === `/${u}` || p === "/";
-
-  return false;
 }
 
 export default function Navbar() {
@@ -102,48 +78,31 @@ export default function Navbar() {
   const fallbackUser = USERS[0]?.slug ?? "abu-bakar-saddique";
   const activeUser = username ?? fallbackUser;
 
-  const displayName =
-    USERS.find((u) => u.slug.toLowerCase() === activeUser.toLowerCase())?.about
-      .name ?? "Portfolio";
-
   return (
     <header className="sticky top-0 z-50 border-b border-white/10 bg-[#060d16]/80 backdrop-blur">
       <Container>
         <div className="flex h-16 items-center justify-between">
           <Link
-            href={`/${activeUser}#top`}
+            href="/"
             className="font-semibold tracking-tight text-slate-100"
           >
-            {displayName}
+            Portfolios
           </Link>
 
           <nav className="flex items-center gap-2">
             {nav.map((item) => {
               const href = buildHref(item.kind, activeUser);
-              const active = isActive(item.kind, pathname, activeUser);
 
               return (
                 <Link
                   key={item.kind}
                   href={href}
-                  className={[
-                    "rounded-lg px-3 py-2 text-sm font-medium transition",
-                    active
-                      ? "bg-[#5d6bff] text-white shadow-[0_12px_30px_rgba(93,107,255,0.25)]"
-                      : "text-slate-300 hover:bg-white/5 hover:text-white",
-                  ].join(" ")}
+                  className="rounded-lg px-3 py-2 text-sm font-medium text-slate-300 transition hover:bg-white/5 hover:text-white"
                 >
                   {item.label}
                 </Link>
               );
             })}
-
-            <Link
-              href="/"
-              className="rounded-lg px-3 py-2 text-sm font-medium text-slate-300 transition hover:bg-white/5 hover:text-white"
-            >
-              Portfolios
-            </Link>
           </nav>
         </div>
       </Container>
