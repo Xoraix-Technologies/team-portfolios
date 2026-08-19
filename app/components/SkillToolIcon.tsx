@@ -24,6 +24,13 @@ import {
   SiDebian,
   SiCentos,
 } from "react-icons/si";
+import {
+  Code2,
+  Database,
+  Layers3,
+  Palette,
+  Server,
+} from "lucide-react";
 
 export type IconKey =
   | "html"
@@ -49,7 +56,13 @@ export type IconKey =
   | "npm"
   | "python"
   | "debian"
-  | "centos";
+  | "centos"
+  | "layers"
+  | "code"
+  | "server"
+  | "db"
+  | "palette"
+  | "brackets";
 
 const ICONS: Record<
   IconKey,
@@ -79,6 +92,12 @@ const ICONS: Record<
   python: { Icon: SiPython, className: "text-slate-200" },
   debian: { Icon: SiDebian, className: "text-slate-200" },
   centos: { Icon: SiCentos, className: "text-slate-200" },
+  layers: { Icon: Layers3, className: "text-indigo-400" },
+  code: { Icon: Code2, className: "text-sky-400" },
+  server: { Icon: Server, className: "text-emerald-400" },
+  db: { Icon: Database, className: "text-purple-400" },
+  palette: { Icon: Palette, className: "text-pink-400" },
+  brackets: { Icon: Code2, className: "text-blue-400" },
 };
 
 export function SkillToolIcon({
