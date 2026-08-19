@@ -7,7 +7,7 @@ export async function generateStaticParams() {
 
   return users.flatMap((user) =>
     user.projects.items.map((project) => ({
-      username: user.username,
+      username: user.slug,
       projectId: project.id, // <-- Must match folder [projectId]
     })),
   );
