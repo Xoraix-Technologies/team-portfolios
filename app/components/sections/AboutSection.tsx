@@ -1,114 +1,128 @@
 import Image from "next/image";
-import type { UserData } from "@/app/lib/site-data";
-import {
-  BriefcaseIcon,
-  CheckIcon,
-  CodeBracketsIcon,
-  CodeIcon,
-  DbIcon,
-  DockerIcon,
-  GithubIcon,
-  PaletteIcon,
-  PythonIcon,
-  ReactIcon,
-  LinuxIcon,
-} from "@/app/components/icons";
+import type { SkillToolItem, UserData } from "@/app/lib/site-data";
+import { Cpu } from "lucide-react";
+import { SkillToolIcon } from "@/app/components/SkillToolIcon";
 
-export default function AboutSection({ about }: { about: UserData["about"] }) {
-  const iconMap: Record<
-    UserData["about"]["skillsLeft"][number]["iconKey"],
-    React.ReactNode
-  > = {
-    react: <ReactIcon />,
-    code: <CodeIcon />,
-    github: <GithubIcon />,
-    palette: <PaletteIcon />,
-    db: <DbIcon />,
-    brackets: <CodeBracketsIcon />,
-    docker: <DockerIcon />,
-    python: <PythonIcon />,
-    debian: <LinuxIcon />,
-    centos: <LinuxIcon />,
-  };
-
+export default function AboutSection({
+  about,
+  skillsTools,
+}: {
+  about: UserData["about"];
+  skillsTools: UserData["skillsTools"];
+}) {
   return (
     <section
       id="about"
       className="relative mx-auto w-full max-w-6xl scroll-mt-24 px-6 py-20"
     >
-      <h2 className="text-center text-4xl font-extrabold tracking-tight text-slate-100">
-        About <span className="text-[#5d6bff]">Me</span>
-      </h2>
-
-      <div className="mt-14 grid gap-10 lg:grid-cols-[340px_1fr] lg:items-start">
-        <div className="mx-auto w-full max-w-[340px]">
-          <div className="relative aspect-[1/1] overflow-hidden rounded-2xl bg-[#071425] shadow-[0_20px_60px_rgba(0,0,0,0.55)] ring-1 ring-slate-800/40">
-            <Image
-              src={about.imageSrc}
-              alt={about.name}
-              fill
-              className="object-cover"
-              sizes="(max-width: 1024px) 340px, 340px"
-            />
-            <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/40 via-black/10 to-transparent" />
-          </div>
-        </div>
-
-        <div className="max-w-3xl">
-          <h3 className="text-2xl font-extrabold text-slate-100">
-            Hello, I&apos;m {about.name}!
-          </h3>
-
-          <p className="mt-2 text-sm font-semibold text-slate-300 sm:text-base">
+      <div className="grid items-center gap-12 lg:grid-cols-[1fr_420px]">
+        <div>
+          <span className="inline-flex items-center gap-2 rounded-full bg-[var(--primary-soft)] px-4 py-2 text-xs font-extrabold tracking-[0.14em] text-[var(--primary)] ring-1 ring-[var(--primary-soft-border)]">
+            <Cpu size={14} />
             {about.roleTitle}
-          </p>
+          </span>
 
-          <p className="mt-4 text-sm leading-7 text-slate-400 sm:text-base">
+          <h2 className="mt-8 max-w-3xl text-balance text-5xl font-black leading-[1.08] tracking-[-0.03em] text-[var(--text-main)] sm:text-6xl">
+            Architecting{" "}
+            <span className="bg-gradient-to-r from-[var(--primary)] to-[var(--accent)] bg-clip-text text-transparent">
+              Intelligence
+            </span>{" "}
+            for the Modern Web.
+          </h2>
+
+          <p className="mt-8 max-w-3xl text-lg leading-8 text-[var(--text-soft)]">
             {about.about1}
           </p>
+        </div>
 
-          <p className="mt-6 text-sm leading-7 text-slate-400 sm:text-base">
-            {about.about2}
-          </p>
+        <div className="relative aspect-[1/1] overflow-hidden rounded-xl bg-[var(--surface)] shadow-[0_16px_38px_rgb(var(--shadow-color)/0.12)] ring-1 ring-[var(--border)]">
+          <Image
+            src={about.imageSrc}
+            alt={about.name}
+            fill
+            className="object-cover"
+            sizes="(max-width: 1024px) 90vw, 420px"
+          />
+        </div>
+      </div>
 
-          <h4 className="mt-10 text-xl font-extrabold text-[#5d6bff]">
-            My Skills
-          </h4>
-
-          <div className="mt-5 grid gap-x-8 gap-y-6 md:grid-cols-2">
-            <div className="space-y-6">
-              {about.skillsLeft.map((s) => (
-                <SkillRow
-                  key={s.name}
-                  name={s.name}
-                  percent={s.percent}
-                  icon={iconMap[s.iconKey]}
-                />
-              ))}
+      <div id="skills" className="mt-24 scroll-mt-24">
+        <div className="rounded-[30px] border border-[var(--border)] bg-[var(--surface)] px-8 py-10 shadow-[0_14px_34px_rgb(var(--shadow-color)/0.06)] sm:px-12 lg:px-14 lg:py-14">
+          <div className="grid gap-12 lg:grid-cols-[0.42fr_1fr] lg:items-start">
+            <div>
+              <h2 className="text-4xl font-black tracking-[-0.04em] text-[var(--text-main)] sm:text-5xl">
+                <span className="bg-[#9eeef8] px-1">Skills</span> &amp; Tools
+              </h2>
+              <p className="mt-6 max-w-md text-2xl font-bold leading-snug text-[var(--text-soft)]">
+                {skillsTools.tagline}
+              </p>
+              <p className="mt-10 max-w-md text-2xl leading-[1.65] text-[var(--text-muted)]">
+                {skillsTools.description}
+              </p>
             </div>
 
-            <div className="space-y-6">
-              {about.skillsRight.map((s) => (
-                <SkillRow
-                  key={s.name}
-                  name={s.name}
-                  percent={s.percent}
-                  icon={iconMap[s.iconKey]}
-                />
+            <div className="flex flex-wrap content-start gap-5 pt-1">
+              {skillsTools.items.map((item) => (
+                <SkillToolPill key={item.label} item={item} />
               ))}
             </div>
           </div>
         </div>
       </div>
 
-      <div className="mt-20">
-        <h3 className="text-center text-2xl font-extrabold text-[#5d6bff]">
-          Professional Experience
-        </h3>
+      <div className="mt-24">
+        <SectionHeading
+          title="My Journey"
+          description="The path that led me to architecting intelligence."
+        />
 
-        <div className="mt-10 space-y-6">
-          {about.experience.map((exp) => (
-            <ExperienceCard key={`${exp.title}-${exp.company}`} exp={exp} />
+        <div className="relative mt-9 space-y-10 pl-14 before:absolute before:left-[15px] before:top-3 before:h-full before:w-px before:bg-[var(--border)]">
+          {about.experience.map((exp, index) => (
+            <article
+              key={`${exp.title}-${exp.company}`}
+              className="relative rounded-3xl border border-[var(--border)] bg-[var(--surface)] p-7"
+            >
+              <span
+                className={[
+                  "absolute -left-[61px] top-2 grid h-8 w-8 place-items-center rounded-full border-2 bg-[var(--page-bg)]",
+                  index === 0
+                    ? "border-[var(--primary)]"
+                    : index === 1
+                      ? "border-[#007a91]"
+                      : "border-[#7c8797]",
+                ].join(" ")}
+              >
+                <span
+                  className={[
+                    "h-3 w-3 rounded-full",
+                    index === 0
+                      ? "bg-[var(--primary)]"
+                      : index === 1
+                        ? "bg-[#007a91]"
+                        : "bg-transparent",
+                  ].join(" ")}
+                />
+              </span>
+
+              <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
+                <div>
+                  <h3 className="text-2xl font-black tracking-[-0.02em] text-[var(--text-main)]">
+                    {exp.title}
+                  </h3>
+                  <p className="mt-1 text-sm font-semibold text-[var(--primary)]">
+                    {exp.company}
+                  </p>
+                </div>
+
+                <span className="w-fit rounded-full bg-[#e3e7ec] px-4 py-2 text-xs font-black tracking-[0.16em] text-[var(--text-muted)]">
+                  {exp.date}
+                </span>
+              </div>
+
+              <p className="mt-6 text-base leading-7 text-[var(--text-soft)]">
+                {exp.bullets.join(" ")}
+              </p>
+            </article>
           ))}
         </div>
       </div>
@@ -116,63 +130,45 @@ export default function AboutSection({ about }: { about: UserData["about"] }) {
   );
 }
 
-function SkillRow({
-  name,
-  percent,
-  icon,
-}: {
-  name: string;
-  percent: number;
-  icon: React.ReactNode;
-}) {
+function SkillToolPill({ item }: { item: SkillToolItem }) {
   return (
-    <div>
-      <div className="mb-2 flex items-center justify-between gap-4">
-        <div className="flex items-center gap-3">
-          <span className="inline-flex h-6 w-6 items-center justify-center text-[#5d6bff]">
-            {icon}
-          </span>
-          <span className="text-sm font-semibold text-slate-200">{name}</span>
-        </div>
-        <span className="text-xs font-semibold text-slate-300">{percent}%</span>
-      </div>
-
-      <div className="h-2 w-full overflow-hidden rounded-full bg-[#0b2742]">
-        <div
-          className="h-full rounded-full bg-[#5d6bff]"
-          style={{ width: `${percent}%` }}
-        />
-      </div>
-    </div>
+    <span className="inline-flex h-[62px] items-center gap-4 rounded-lg border border-[#9eeef8] bg-[#e6fbff] px-7 text-lg font-black tracking-[0.14em] text-[var(--primary)] shadow-[inset_0_0_0_1px_rgba(255,255,255,0.65)] transition hover:-translate-y-0.5 hover:bg-[#dff8ff]">
+      <span className="grid h-7 w-7 place-items-center">
+        {item.iconKey ? (
+          <SkillToolIcon iconKey={item.iconKey} className="h-7 w-7" />
+        ) : (
+          <FallbackIcon label={item.label} />
+        )}
+      </span>
+      <span className="whitespace-nowrap">{item.label}</span>
+    </span>
   );
 }
 
-function ExperienceCard({ exp }: { exp: UserData["about"]["experience"][number] }) {
+function FallbackIcon({ label }: { label: string }) {
+  const initials = label
+    .split(" ")
+    .slice(0, 2)
+    .map((word) => word[0])
+    .join("")
+    .toUpperCase();
+
+  return <span className="text-xs font-black">{initials}</span>;
+}
+
+function SectionHeading({
+  title,
+  description,
+}: {
+  title: string;
+  description: string;
+}) {
   return (
-    <div className="rounded-xl bg-[#0b2542] px-7 py-6 shadow-[0_16px_50px_rgba(0,0,0,0.45)] ring-1 ring-slate-800/40">
-      <div className="flex items-start gap-4">
-        <div className="mt-1 inline-flex h-9 w-9 items-center justify-center rounded-lg bg-[#091d33] text-[#5d6bff] ring-1 ring-slate-700/40">
-          <BriefcaseIcon />
-        </div>
-
-        <div className="flex-1">
-          <h4 className="text-lg font-extrabold text-slate-100">{exp.title}</h4>
-          <p className="mt-1 text-sm text-slate-300">
-            {exp.company} <span className="text-slate-400">• {exp.date}</span>
-          </p>
-        </div>
-      </div>
-
-      <div className="mt-5 space-y-3">
-        {exp.bullets.map((b, i) => (
-          <div key={i} className="flex items-start gap-3 text-slate-300">
-            <span className="mt-[2px] inline-flex h-5 w-5 items-center justify-center text-[#5d6bff]">
-              <CheckIcon />
-            </span>
-            <p className="text-sm leading-6">{b}</p>
-          </div>
-        ))}
-      </div>
+    <div>
+      <h2 className="text-3xl font-black tracking-[-0.03em] text-[var(--text-main)]">
+        {title}
+      </h2>
+      <p className="mt-3 text-base text-[var(--text-soft)]">{description}</p>
     </div>
   );
 }

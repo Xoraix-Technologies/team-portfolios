@@ -2,6 +2,8 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { Mail } from "lucide-react";
+import { FaGithub, FaLinkedinIn } from "react-icons/fa6";
 import { USERS } from "../lib/site-data";
 // import { USERS } from "@/lib/site-data";
 
@@ -27,10 +29,10 @@ export default function Footer() {
 
   if (pathname === "/") {
     return (
-      <footer className="border-t border-white/10 bg-black">
+      <footer className="border-t border-[var(--border)] bg-[var(--page-bg)]">
         <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-6">
-          <p className="text-sm text-slate-300">
-            © {new Date().getFullYear()} Portfolios. All rights reserved.
+          <p className="text-sm text-[var(--text-muted)]">
+            © 2026 XoraixTechnologies. All rights reserved.
           </p>
         </div>
       </footer>
@@ -44,135 +46,48 @@ export default function Footer() {
       (u) => u.slug.toLowerCase() === (username ?? "").toLowerCase(),
     ) ?? fallbackUser;
 
-  const name = user?.about?.name ?? "Portfolio";
   const email = user?.contact?.email ?? "example@email.com";
   const linkedin = user?.contact?.linkedin ?? "#";
   const github = user?.contact?.github ?? "https://github.com/your-username";
 
   return (
-    <footer className="border-t border-white/10 bg-black">
+    <footer className="border-t border-[var(--border)] bg-[var(--page-bg)]">
       <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-6">
-        <p className="text-sm text-slate-300">
-          © {new Date().getFullYear()} {name}. All rights reserved.
+        <p className="text-sm text-[var(--text-muted)]">
+          © 2026 XoraixTechnologies. All rights reserved.
         </p>
 
-        <div className="flex items-center gap-6 text-slate-300">
+        <div className="flex items-center gap-6 text-[var(--text-muted)]">
           {/* GitHub */}
           <Link
             href={github}
             target="_blank"
-            className="transition hover:text-white"
+            className="transition hover:text-[var(--primary)]"
             aria-label="GitHub"
           >
-            <GithubIcon />
+            <FaGithub size={19} />
           </Link>
 
           {/* LinkedIn */}
           <Link
             href={linkedin}
             target="_blank"
-            className="transition hover:text-white"
+            className="transition hover:text-[var(--primary)]"
             aria-label="LinkedIn"
           >
-            <LinkedInIcon />
+            <FaLinkedinIn size={19} />
           </Link>
 
           {/* Email */}
           <Link
             href={`mailto:${email}`}
-            className="transition hover:text-white"
+            className="transition hover:text-[var(--primary)]"
             aria-label="Email"
           >
-            <MailIcon />
+            <Mail size={20} />
           </Link>
         </div>
       </div>
     </footer>
-  );
-}
-
-/* ---------------- icons stay same ---------------- */
-
-function GithubIcon() {
-  return (
-    <svg
-      width="20"
-      height="20"
-      viewBox="0 0 24 24"
-      fill="none"
-      aria-hidden="true"
-    >
-      <path
-        d="M9 19c-4 1.5-4-2.5-6-3m12 6v-3.2c0-.9.3-1.6.8-2-2.7-.3-5.6-1.3-5.6-5.8 0-1.3.5-2.4 1.2-3.2-.1-.3-.5-1.6.1-3.3 0 0 1-.3 3.3 1.2.9-.3 1.9-.4 2.9-.4s2 .1 2.9.4c2.3-1.5 3.3-1.2 3.3-1.2.6 1.7.2 3 .1 3.3.8.8 1.2 1.9 1.2 3.2 0 4.5-2.9 5.5-5.6 5.8.5.4.9 1.3.9 2.6V22"
-        stroke="currentColor"
-        strokeWidth="1.7"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-    </svg>
-  );
-}
-
-function LinkedInIcon() {
-  return (
-    <svg
-      width="20"
-      height="20"
-      viewBox="0 0 24 24"
-      fill="none"
-      aria-hidden="true"
-    >
-      <path
-        d="M6.5 9.5V19"
-        stroke="currentColor"
-        strokeWidth="1.8"
-        strokeLinecap="round"
-      />
-      <path
-        d="M6.5 6.6h.01"
-        stroke="currentColor"
-        strokeWidth="3"
-        strokeLinecap="round"
-      />
-      <path
-        d="M10.2 19v-5.4c0-1.8 1-3 2.8-3 1.7 0 2.6 1.2 2.6 3V19"
-        stroke="currentColor"
-        strokeWidth="1.8"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-      <path
-        d="M10.2 12.1V19"
-        stroke="currentColor"
-        strokeWidth="1.8"
-        strokeLinecap="round"
-      />
-    </svg>
-  );
-}
-
-function MailIcon() {
-  return (
-    <svg
-      width="20"
-      height="20"
-      viewBox="0 0 24 24"
-      fill="none"
-      aria-hidden="true"
-    >
-      <path
-        d="M4 6h16v12H4V6Z"
-        stroke="currentColor"
-        strokeWidth="1.8"
-        strokeLinejoin="round"
-      />
-      <path
-        d="m4 7 8 6 8-6"
-        stroke="currentColor"
-        strokeWidth="1.8"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-    </svg>
   );
 }

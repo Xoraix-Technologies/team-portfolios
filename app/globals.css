@@ -2,6 +2,67 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --page-bg: #f5f8fc;
+  --page-glow: #e5f9ff;
+  --surface: #ffffff;
+  --surface-strong: #f0f4fa;
+  --text-main: #1d2229;
+  --text-soft: #4c5362;
+  --text-muted: #626b7a;
+  --text-subtle: #858e9d;
+  --border: #dde5ef;
+  --input-border: #d9e2ee;
+  --primary: #0647b7;
+  --primary-hover: #043a9a;
+  --accent: #24c9e8;
+  --primary-soft: #e7f7fd;
+  --primary-soft-border: #bdeefa;
+  --hover-soft: #edf5ff;
+  --shadow-color: 29 46 68;
+  color-scheme: light;
+}
+
+.dark {
+  --page-bg: #16151f;
+  --page-glow: #242233;
+  --surface: #211f2d;
+  --surface-strong: #2b2938;
+  --text-main: #f4f3f8;
+  --text-soft: #d9d7e5;
+  --text-muted: #a8a5bb;
+  --text-subtle: #7f7a96;
+  --border: #3b394c;
+  --input-border: #4a465c;
+  --primary: #8f85ff;
+  --primary-hover: #7e73f4;
+  --primary-soft: #302b55;
+  --primary-soft-border: #4b4382;
+  --hover-soft: #2b2844;
+  --shadow-color: 0 0 0;
+  color-scheme: dark;
+}
+
+html,
+body {
+  background: var(--page-bg);
+  color: var(--text-main);
+  font-family:
+    Inter, "Public Sans", ui-sans-serif, system-ui, -apple-system,
+    BlinkMacSystemFont, "Segoe UI", sans-serif;
+  transition:
+    background-color 180ms ease,
+    color 180ms ease;
+}
+
 html {
   scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+}
+
+::selection {
+  background: color-mix(in srgb, var(--accent) 35%, transparent);
 }
