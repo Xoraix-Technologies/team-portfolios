@@ -181,9 +181,9 @@ export const USERS: UserData[] = [
         "Agentic AI",
       ],
       ctaText: "View My Work",
-      cvText: "CV Available on Request",
-      // resumeUrl intentionally left empty
-      // resumeFileName intentionally left empty
+      cvText: "Download CV",
+      resumeUrl: "/resumes/arslan-syed.pdf",
+      resumeFileName: "arslan-syed.pdf",
     },
 
     about: {
@@ -494,7 +494,7 @@ export const USERS: UserData[] = [
     hero: {
       pill: "Senior Full Stack Engineer",
       name: "Saddam Hussain",
-      mainTitle: "Senior Full Stack Engineer",
+      mainTitle: "Co Founder",
       subtitle: "Python | JavaScript | Agentic AI",
       shortIntro:
         "Senior full-stack engineer with 8+ years building and shipping production web applications across Python, Django, FastAPI, TypeScript, React, Next.js, and Node.js, with hands-on experience delivering AI-powered SaaS and multi-agent automation.",
@@ -516,7 +516,7 @@ export const USERS: UserData[] = [
 
     about: {
       name: "Saddam Hussain",
-      roleTitle: "Senior Full Stack Engineer",
+      roleTitle: "Full Stack Engineer + AI Engineer",
       imageSrc: "/images/laptop-bg.jpg",
       about1:
         "I am a senior full-stack engineer with 8+ years of experience building production web applications across Python, Django, FastAPI, TypeScript, React, Next.js, and Node.js. I work across backend services, data modeling, APIs, and polished frontend workflows.",
@@ -649,6 +649,12 @@ export const USERS: UserData[] = [
           description:
             "LLM-powered SaaS, multi-agent workflows, OpenAI integrations, document processing, and AI-assisted development.",
           iconKey: "palette",
+        },
+        {
+          title: "LLM Evaluations",
+          description:
+            "Evaluation workflows for validating AI outputs, measuring response quality, and improving reliability across production LLM features.",
+          iconKey: "code",
         },
       ],
     },
@@ -868,7 +874,7 @@ export const USERS: UserData[] = [
     hero: {
       pill: "Frontend Engineer (React, Next.js)",
       name: "Abu Bakar Saddique",
-      mainTitle: "Frontend Engineer",
+      mainTitle: "Software Engineer",
       subtitle: "React, Next.js & TypeScript (with Full-Stack Experience)",
       shortIntro:
         "Crafting innovative, high-performance web applications with React, Next.js, and Node.js—turning ideas into reality through modern technologies and clean code.",
@@ -881,7 +887,7 @@ export const USERS: UserData[] = [
 
     about: {
       name: "Abu Bakar Saddique",
-      roleTitle: "Front-End / Full-Stack Web Developer",
+      roleTitle: "Full Stack Engineer + AI Engineer",
       imageSrc: "/images/about1.jpg",
       about1:
         "I am a dedicated Front-End / Full-Stack Web Developer specializing in building dynamic, responsive, and user-friendly web applications. With hands-on experience in modern React ecosystems, I deliver polished UI, clean architecture, and scalable features using technologies like React, Next.js, TypeScript, and Node.js.",
@@ -1073,7 +1079,7 @@ export const USERS: UserData[] = [
     hero: {
       pill: "Full-Stack Engineer (React, Next.js)",
       name: "Taha Bin Imran",
-      mainTitle: "Full-Stack Engineer",
+      mainTitle: "Software Engineer",
       subtitle: "React, Next.js & TypeScript (with Full-Stack Experience)",
       shortIntro:
         "Building clean, responsive, and user-focused web applications with React, Next.js, and modern UI tooling—shipping fast, maintainable interfaces that feel great to use.",
@@ -1091,7 +1097,7 @@ export const USERS: UserData[] = [
 
     about: {
       name: "Taha Bin Imran",
-      roleTitle: "Front-End / Full-Stack Web Developer",
+      roleTitle: "Full Stack Engineer + AI Engineer",
       imageSrc: "/images/laptop-bg.jpg",
       about1:
         "I build responsive, modern web interfaces with a focus on clean UI, smooth UX, and practical component architecture. I work confidently across React ecosystems to deliver scalable features and polished experiences.",
