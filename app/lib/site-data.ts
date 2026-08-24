@@ -163,6 +163,332 @@ export type UserData = {
 
 export const USERS: UserData[] = [
   {
+    slug: "arslan-syed",
+
+    hero: {
+      pill: "Senior Full-Stack Engineer (Python, Django, React & AI)",
+      name: "Arslan Syed",
+      mainTitle: "CEO Senior Full Stack + AI Engineer",
+      subtitle: "Python, TypeScript, Django, React, Next.js & AI",
+      shortIntro:
+        "Full-stack engineer with 8+ years building and shipping production web applications and SaaS platforms across Python, Django, FastAPI, TypeScript, React, Next.js, Node.js, databases, cloud infrastructure, and production AI workflows.",
+      techPills: [
+        "Python",
+        "Django",
+        "React",
+        "Next.js",
+        "TypeScript",
+        "Agentic AI",
+      ],
+      ctaText: "View My Work",
+      cvText: "CV Available on Request",
+      // resumeUrl intentionally left empty
+      // resumeFileName intentionally left empty
+    },
+
+    about: {
+      name: "Arslan Syed",
+      roleTitle: "Senior Full Stack Engineer",
+      imageSrc: "/images/arslan-projects-images/about.jpg",
+      about1:
+        "I am a senior full-stack engineer with 8+ years of experience building production web applications and SaaS platforms. I work across Python, Django, FastAPI, Node.js, TypeScript, React, and Next.js, with strong experience designing APIs, data models, authentication flows, and scalable frontend workflows.",
+      about2:
+        "My recent work includes AI-powered accounts-payable automation, multi-agent systems, document processing with Google Cloud Vision, RPA orchestration, and production deployments using PostgreSQL, MongoDB, Docker, AWS, Azure, GCP, and CI/CD pipelines. I use AI coding agents such as Claude Code and Codex while reviewing changes with type checks and tests.",
+      skillsLeft: [
+        { name: "React", percent: 90, iconKey: "react" },
+        { name: "TypeScript", percent: 80, iconKey: "brackets" },
+        { name: "Node.js", percent: 80, iconKey: "code" },
+        { name: "GitHub", percent: 85, iconKey: "github" },
+      ],
+      skillsRight: [
+        { name: "Next.js", percent: 85, iconKey: "db" },
+        { name: "Docker", percent: 70, iconKey: "docker" },
+        { name: "Python", percent: 75, iconKey: "python" },
+        { name: "Tailwind", percent: 80, iconKey: "palette" },
+      ],
+      experience: [
+        {
+          title: "Senior Full Stack Engineer",
+          company: "Aimyable, Inc.",
+          date: "Apr 2025 – Present",
+          bullets: [
+            "Core full-stack engineer on an AI-powered accounts-payable automation SaaS built with Django DRF, Next.js, TypeScript, PostgreSQL, Docker, and AWS.",
+            "Built multi-agent invoice automation workflows, including orchestration across database operations, specialized AI agents, and RPA-driven UI actions over WebSockets.",
+            "Worked on invoice ingestion and document data extraction using Google Cloud Vision OCR, and built authentication, RBAC, onboarding, provisioning, REST APIs, and normalized PostgreSQL schemas.",
+          ],
+        },
+        {
+          title: "Senior Full Stack Engineer / Team Lead",
+          company: "Inner Machinations (Silicon Valley)",
+          date: "Mar 2024 – Apr 2025",
+          bullets: [
+            "Led development of Udu.com, a topic-based communication platform, managing a team of five senior developers in an Agile process.",
+            "Built and optimized the TypeScript and React/Next.js frontend, reducing page load times by around 25% through component and API improvements.",
+            "Developed Node.js APIs, moved critical operations to Next.js Server Actions, customized Clerk authentication, and built posting, commenting, media, and search features.",
+          ],
+        },
+        {
+          title: "Senior Full Stack Developer",
+          company: "Meshlogix Solutions",
+          date: "Nov 2023 – Nov 2024",
+          bullets: [
+            "Integrated the Bland AI voice agent into backend workflows to automate review collection.",
+            "Worked across a hybrid Node.js and Python/Django backend covering integrations, data processing, and core application services.",
+            "Implemented server-side authentication with NextAuth.js and improved reliability through caching, load balancing, and Docker containerization.",
+          ],
+        },
+        {
+          title: "Full Stack Developer",
+          company: "Banyo Ltd",
+          date: "Apr 2023 – Mar 2024",
+          bullets: [
+            "Built a POS and inventory web application with a Django backend and Next.js frontend, including REST APIs across core product modules.",
+            "Implemented real-time inventory management with Django REST Framework and MongoDB, improving stock and sales synchronization.",
+            "Built a responsive Next.js POS interface, deployed infrastructure on AWS EC2, and automated deployments with GitHub Actions CI/CD.",
+          ],
+        },
+        {
+          title: "Full Stack Developer",
+          company: "Bright Byte Solutions",
+          date: "Jan 2018 – Apr 2023",
+          bullets: [
+            "Built TypeScript backend services in Node.js and worked across full-stack projects using GraphQL and REST APIs.",
+            "Developed React applications with Redux-Saga and integrated MapBox and satellite mapping features.",
+            "Set up PostgreSQL deployments and GitHub-based CI/CD to improve the release process.",
+          ],
+        },
+      ],
+    },
+
+    tech: {
+      heading: "Technologies I Work With",
+      description:
+        "A production-focused full-stack toolkit spanning frontend, backend, databases, AI, cloud infrastructure, testing, and delivery.",
+      techs: [
+        {
+          title: "Python & Django",
+          description:
+            "Backend development with Python, Django, Django REST Framework, and production REST APIs.",
+          iconKey: "code",
+        },
+        {
+          title: "FastAPI",
+          description:
+            "Python API development for modern, high-performance backend services.",
+          iconKey: "server",
+        },
+        {
+          title: "React & Next.js",
+          description:
+            "Production web applications, server-side rendering, Server Actions, and modern React workflows.",
+          iconKey: "layers",
+        },
+        {
+          title: "TypeScript & Node.js",
+          description:
+            "Type-safe frontend and backend development with Node.js, Express, REST, and GraphQL APIs.",
+          iconKey: "code",
+        },
+        {
+          title: "PostgreSQL & MongoDB",
+          description:
+            "Relational and NoSQL data modeling with PostgreSQL, MongoDB, MySQL, SQLite, Redis, and Supabase.",
+          iconKey: "db",
+        },
+        {
+          title: "AI & Multi-Agent Systems",
+          description:
+            "LLM and multi-agent workflows, OpenAI API integrations, document processing, and AI-assisted development.",
+          iconKey: "server",
+        },
+        {
+          title: "Docker & CI/CD",
+          description:
+            "Containerized applications and automated delivery workflows using Docker and GitHub Actions.",
+          iconKey: "docker",
+        },
+        {
+          title: "AWS, Azure & GCP",
+          description:
+            "Cloud deployment and infrastructure experience across AWS, Azure, and Google Cloud.",
+          iconKey: "server",
+        },
+      ],
+    },
+
+    projects: {
+      heading: "My Projects",
+      description:
+        "Selected production systems covering AI-powered automation, SaaS workflows, POS operations, inventory management, APIs, and cloud deployment.",
+      items: [
+        {
+          id: "banyo-pos",
+          category: "Web app",
+          title: "Banyo POS",
+          projectTitle: "Banyo POS - Point of Sale & Inventory System",
+          projectChallenges: [
+            "Building a broad POS and inventory platform with reliable data flows across products, stock, sales, and operational modules.",
+            "Keeping inventory and sales data synchronized in real time while supporting responsive day-to-day POS workflows.",
+            "Designing a frontend that remained responsive and practical for daily point-of-sale operations.",
+            "Deploying and maintaining the application on cloud infrastructure with repeatable automated releases.",
+          ],
+          projectSolutions: [
+            "Built the backend with Django and Django REST Framework, exposing REST APIs across the product's core modules.",
+            "Implemented real-time inventory management with MongoDB to improve stock and sales synchronization latency and accuracy.",
+            "Built the responsive POS interface in Next.js using server-side rendering.",
+            "Set up AWS EC2 infrastructure and a GitHub Actions CI/CD pipeline to remove manual deployment steps.",
+          ],
+          description:
+            "A production POS and inventory web application built with a Django backend and Next.js frontend. The system covers REST APIs across core modules, real-time inventory management with Django REST Framework and MongoDB, a responsive server-rendered POS interface, AWS EC2 deployment, and automated CI/CD with GitHub Actions.",
+          tags: [
+            "Django",
+            "DRF",
+            "Next.js",
+            "MongoDB",
+            "AWS",
+            "GitHub Actions",
+          ],
+          image: "/images/arslan-projects-images/POS.jpg",
+          sourceUrl: "#",
+        },
+        {
+          id: "aimyable-dashboard",
+          category: "AI SaaS",
+          title: "Aimyable",
+          projectTitle:
+            "Aimyable - AI-Powered Accounts Payable Automation SaaS",
+          projectChallenges: [
+            "Coordinating multi-step invoice automation across specialized AI agents, database operations, and RPA-driven UI actions.",
+            "Extracting structured invoice data from documents so information could flow into the system without manual entry.",
+            "Supporting secure multi-tenant onboarding, provisioning, role-based access, invitations, and machine-to-machine authentication.",
+            "Keeping backend services, data models, frontend workflows, and Windows RPA execution synchronized in a production SaaS environment.",
+          ],
+          projectSolutions: [
+            "Built a multi-agent workflow engine with specialized Step, DB, and RPA agents for multi-step invoice automation.",
+            "Worked on invoice ingestion and data extraction using the Google Cloud Vision Python SDK to OCR invoice documents and parse structured fields.",
+            "Built an orchestration layer connecting database operations with RPA-driven UI actions over WebSockets for real-time task dispatch and status updates.",
+            "Implemented invitation-based registration, token validation, RBAC, user-tenant linkage, onboarding, password gating, session refresh, machine-to-machine authentication, normalized PostgreSQL schemas, and core REST APIs.",
+            "Contributed to the Next.js onboarding and admin experience using Material UI and React Hook Form, with the platform containerized in Docker and deployed on AWS.",
+          ],
+          description:
+            "An AI-powered accounts-payable automation SaaS built with Django DRF, Next.js, TypeScript, PostgreSQL, Docker, and AWS. The platform combines multi-agent orchestration, invoice OCR and document processing, database automation, RPA-driven UI actions over WebSockets, multi-tenant authentication and RBAC, and self-service onboarding workflows to automate accounts-payable tasks end to end.",
+          tags: [
+            "Django DRF",
+            "Next.js",
+            "TypeScript",
+            "PostgreSQL",
+            "Docker",
+            "AWS",
+            "Agentic AI",
+            "Google Cloud Vision",
+            "WebSockets",
+          ],
+          image: "/images/arslan-projects-images/aimyable.png",
+          sourceUrl: "#",
+        },
+        {
+          id: "udu-platform",
+          category: "Social Platform",
+          title: "UDU",
+          projectTitle:
+            "UDU - Community Platform for Creating, Connecting & Contributing",
+
+          projectChallenges: [
+            "Designing a platform where users can easily create UDUs around topics and interests that matter to them.",
+            "Building a seamless social experience that allows users to discover UDUs, connect with others, and build meaningful communities.",
+            "Creating contribution workflows that help users share content with relevant audiences while keeping interactions simple and intuitive.",
+            "Implementing secure and flexible authentication with multiple sign-in options while maintaining a smooth onboarding experience.",
+          ],
+
+          projectSolutions: [
+            "Built a centralized platform that allows users to create and manage UDUs around their interests, topics, and communities.",
+            "Implemented user connection and community features that enable users to discover UDUs, connect with people, and expand their network.",
+            "Developed contribution workflows that allow users to publish and share content with audiences interested in specific UDUs.",
+            "Implemented secure authentication with username/email and password login, password recovery, email-code authentication, Google sign-in, and account registration.",
+            "Created a responsive and user-friendly interface focused on the platform's three core experiences: Create, Connect, and Contribute.",
+          ],
+
+          description:
+            "UDU is a community-driven social platform designed around three core experiences: Create, Connect, and Contribute. Users can create UDUs based on topics that matter to them, connect their UDUs with others to build communities and relationships, and contribute content to reach relevant audiences. The platform includes secure account authentication, social login, user onboarding, community discovery, and content contribution workflows within a modern and responsive web experience.",
+
+          tags: [
+            "Web Application",
+            "Social Platform",
+            "Community Platform",
+            "Authentication",
+            "Google OAuth",
+            "User Onboarding",
+            "Content Sharing",
+            "Responsive UI",
+          ],
+
+          image: "/images/arslan-projects-images/udu.png",
+          sourceUrl: "#",
+        },
+      ],
+    },
+
+    contact: {
+      email: "arslan2591@gmail.com",
+      linkedin: "https://linkedin.com",
+      github: "https://github.com/arslan-syed",
+    },
+
+    skillsTools: {
+      title: "Skills & Tools",
+      tagline: "Building production software across web, cloud, and AI.",
+      description:
+        "I build and ship production full-stack applications across Python and JavaScript ecosystems, with experience in APIs, databases, authentication, AI automation, cloud infrastructure, containers, testing, and CI/CD.",
+
+      items: [
+        // Core languages & application stack
+        { label: "Python", iconKey: "python" },
+        { label: "TypeScript", iconKey: "typescript" },
+        { label: "JavaScript", iconKey: "code" },
+        { label: "ReactJS", iconKey: "react" },
+        { label: "NextJS", iconKey: "next" },
+        { label: "Django / DRF", iconKey: "python" },
+        { label: "FastAPI", iconKey: "express" },
+        { label: "NodeJS", iconKey: "node" },
+        { label: "ExpressJS", iconKey: "express" },
+
+        // Databases & APIs
+        { label: "PostgreSQL", iconKey: "db" },
+        { label: "MongoDB", iconKey: "mongodb" },
+        { label: "Redis", iconKey: "db" },
+        { label: "Supabase", iconKey: "db" },
+        { label: "REST APIs", iconKey: "code" },
+        { label: "GraphQL APIs", iconKey: "code" },
+
+        // Frontend
+        { label: "Redux", iconKey: "react" },
+        { label: "Material UI", iconKey: "mui" },
+        { label: "Tailwind CSS", iconKey: "tailwind" },
+
+        // AI
+        { label: "Agentic AI", iconKey: "code" },
+        { label: "Generative AI", iconKey: "code" },
+        { label: "OpenAI API", iconKey: "code" },
+        { label: "Claude Code", iconKey: "code" },
+        { label: "Codex", iconKey: "code" },
+        { label: "Google Cloud Vision", iconKey: "code" },
+
+        // Cloud & DevOps
+        { label: "Docker", iconKey: "docker" },
+        { label: "AWS", iconKey: "server" },
+        { label: "Azure", iconKey: "server" },
+        { label: "GCP", iconKey: "server" },
+        { label: "GitHub Actions", iconKey: "github" },
+
+        // Tools
+        { label: "Git", iconKey: "git" },
+        { label: "GitHub", iconKey: "github" },
+        { label: "Postman", iconKey: "postman" },
+        { label: "npm", iconKey: "npm" },
+      ],
+    },
+  },
+  {
     slug: "saddam-hussain",
 
     hero: {
@@ -533,329 +859,6 @@ export const USERS: UserData[] = [
         // Version control
         { label: "Git", iconKey: "git" },
         { label: "GitHub", iconKey: "github" },
-      ],
-    },
-  },
-  {
-    slug: "arslan-syed",
-
-    hero: {
-      pill: "Senior Full-Stack Engineer (Python, Django, React & AI)",
-      name: "Arslan Syed",
-      mainTitle: "Senior Full Stack Engineer",
-      subtitle: "Python, Django, React, Next.js & AI",
-      shortIntro:
-        "Full-stack engineer with 8+ years building and shipping production web applications and SaaS platforms across Python, Django, FastAPI, TypeScript, React, Next.js, Node.js, databases, cloud infrastructure, and production AI workflows.",
-      techPills: [
-        "Python",
-        "Django",
-        "React",
-        "Next.js",
-        "TypeScript",
-        "Agentic AI",
-      ],
-      ctaText: "View My Work",
-      cvText: "Download CV",
-      resumeUrl: "/resumes/arslan-syed.pdf",
-      resumeFileName: "arslan-syed.pdf",
-    },
-
-    about: {
-      name: "Arslan Syed",
-      roleTitle: "Senior Full Stack Engineer",
-      imageSrc: "/images/arslan-projects-images/about.jpg",
-      about1:
-        "I am a senior full-stack engineer with 8+ years of experience building production web applications and SaaS platforms. I work across Python, Django, FastAPI, Node.js, TypeScript, React, and Next.js, with strong experience designing APIs, data models, authentication flows, and scalable frontend workflows.",
-      about2:
-        "My recent work includes AI-powered accounts-payable automation, multi-agent systems, document processing with Google Cloud Vision, RPA orchestration, and production deployments using PostgreSQL, MongoDB, Docker, AWS, Azure, GCP, and CI/CD pipelines. I use AI coding agents such as Claude Code and Codex while reviewing changes with type checks and tests.",
-      skillsLeft: [
-        { name: "React", percent: 90, iconKey: "react" },
-        { name: "TypeScript", percent: 80, iconKey: "brackets" },
-        { name: "Node.js", percent: 80, iconKey: "code" },
-        { name: "GitHub", percent: 85, iconKey: "github" },
-      ],
-      skillsRight: [
-        { name: "Next.js", percent: 85, iconKey: "db" },
-        { name: "Docker", percent: 70, iconKey: "docker" },
-        { name: "Python", percent: 75, iconKey: "python" },
-        { name: "Tailwind", percent: 80, iconKey: "palette" },
-      ],
-      experience: [
-        {
-          title: "Senior Full Stack Engineer",
-          company: "Aimyable, Inc.",
-          date: "Apr 2025 – Present",
-          bullets: [
-            "Core full-stack engineer on an AI-powered accounts-payable automation SaaS built with Django DRF, Next.js, TypeScript, PostgreSQL, Docker, and AWS.",
-            "Built multi-agent invoice automation workflows, including orchestration across database operations, specialized AI agents, and RPA-driven UI actions over WebSockets.",
-            "Worked on invoice ingestion and document data extraction using Google Cloud Vision OCR, and built authentication, RBAC, onboarding, provisioning, REST APIs, and normalized PostgreSQL schemas.",
-          ],
-        },
-        {
-          title: "Senior Full Stack Engineer / Team Lead",
-          company: "Inner Machinations (Silicon Valley)",
-          date: "Mar 2024 – Apr 2025",
-          bullets: [
-            "Led development of Udu.com, a topic-based communication platform, managing a team of five senior developers in an Agile process.",
-            "Built and optimized the TypeScript and React/Next.js frontend, reducing page load times by around 25% through component and API improvements.",
-            "Developed Node.js APIs, moved critical operations to Next.js Server Actions, customized Clerk authentication, and built posting, commenting, media, and search features.",
-          ],
-        },
-        {
-          title: "Senior Full Stack Developer",
-          company: "Meshlogix Solutions",
-          date: "Nov 2023 – Nov 2024",
-          bullets: [
-            "Integrated the Bland AI voice agent into backend workflows to automate review collection.",
-            "Worked across a hybrid Node.js and Python/Django backend covering integrations, data processing, and core application services.",
-            "Implemented server-side authentication with NextAuth.js and improved reliability through caching, load balancing, and Docker containerization.",
-          ],
-        },
-        {
-          title: "Full Stack Developer",
-          company: "Banyo Ltd",
-          date: "Apr 2023 – Mar 2024",
-          bullets: [
-            "Built a POS and inventory web application with a Django backend and Next.js frontend, including REST APIs across core product modules.",
-            "Implemented real-time inventory management with Django REST Framework and MongoDB, improving stock and sales synchronization.",
-            "Built a responsive Next.js POS interface, deployed infrastructure on AWS EC2, and automated deployments with GitHub Actions CI/CD.",
-          ],
-        },
-        {
-          title: "Full Stack Developer",
-          company: "Bright Byte Solutions",
-          date: "Jan 2018 – Apr 2023",
-          bullets: [
-            "Built TypeScript backend services in Node.js and worked across full-stack projects using GraphQL and REST APIs.",
-            "Developed React applications with Redux-Saga and integrated MapBox and satellite mapping features.",
-            "Set up PostgreSQL deployments and GitHub-based CI/CD to improve the release process.",
-          ],
-        },
-      ],
-    },
-
-    tech: {
-      heading: "Technologies I Work With",
-      description:
-        "A production-focused full-stack toolkit spanning frontend, backend, databases, AI, cloud infrastructure, testing, and delivery.",
-      techs: [
-        {
-          title: "Python & Django",
-          description:
-            "Backend development with Python, Django, Django REST Framework, and production REST APIs.",
-          iconKey: "code",
-        },
-        {
-          title: "FastAPI",
-          description:
-            "Python API development for modern, high-performance backend services.",
-          iconKey: "server",
-        },
-        {
-          title: "React & Next.js",
-          description:
-            "Production web applications, server-side rendering, Server Actions, and modern React workflows.",
-          iconKey: "layers",
-        },
-        {
-          title: "TypeScript & Node.js",
-          description:
-            "Type-safe frontend and backend development with Node.js, Express, REST, and GraphQL APIs.",
-          iconKey: "code",
-        },
-        {
-          title: "PostgreSQL & MongoDB",
-          description:
-            "Relational and NoSQL data modeling with PostgreSQL, MongoDB, MySQL, SQLite, Redis, and Supabase.",
-          iconKey: "db",
-        },
-        {
-          title: "AI & Multi-Agent Systems",
-          description:
-            "LLM and multi-agent workflows, OpenAI API integrations, document processing, and AI-assisted development.",
-          iconKey: "server",
-        },
-        {
-          title: "Docker & CI/CD",
-          description:
-            "Containerized applications and automated delivery workflows using Docker and GitHub Actions.",
-          iconKey: "docker",
-        },
-        {
-          title: "AWS, Azure & GCP",
-          description:
-            "Cloud deployment and infrastructure experience across AWS, Azure, and Google Cloud.",
-          iconKey: "server",
-        },
-      ],
-    },
-
-    projects: {
-      heading: "My Projects",
-      description:
-        "Selected production systems covering AI-powered automation, SaaS workflows, POS operations, inventory management, APIs, and cloud deployment.",
-      items: [
-        {
-          id: "banyo-pos",
-          category: "Web app",
-          title: "Banyo POS",
-          projectTitle: "Banyo POS - Point of Sale & Inventory System",
-          projectChallenges: [
-            "Building a broad POS and inventory platform with reliable data flows across products, stock, sales, and operational modules.",
-            "Keeping inventory and sales data synchronized in real time while supporting responsive day-to-day POS workflows.",
-            "Designing a frontend that remained responsive and practical for daily point-of-sale operations.",
-            "Deploying and maintaining the application on cloud infrastructure with repeatable automated releases.",
-          ],
-          projectSolutions: [
-            "Built the backend with Django and Django REST Framework, exposing REST APIs across the product's core modules.",
-            "Implemented real-time inventory management with MongoDB to improve stock and sales synchronization latency and accuracy.",
-            "Built the responsive POS interface in Next.js using server-side rendering.",
-            "Set up AWS EC2 infrastructure and a GitHub Actions CI/CD pipeline to remove manual deployment steps.",
-          ],
-          description:
-            "A production POS and inventory web application built with a Django backend and Next.js frontend. The system covers REST APIs across core modules, real-time inventory management with Django REST Framework and MongoDB, a responsive server-rendered POS interface, AWS EC2 deployment, and automated CI/CD with GitHub Actions.",
-          tags: [
-            "Django",
-            "DRF",
-            "Next.js",
-            "MongoDB",
-            "AWS",
-            "GitHub Actions",
-          ],
-          image: "/images/arslan-projects-images/POS.jpg",
-        },
-        {
-          id: "aimyable-dashboard",
-          category: "AI SaaS",
-          title: "Aimyable",
-          projectTitle:
-            "Aimyable - AI-Powered Accounts Payable Automation SaaS",
-          projectChallenges: [
-            "Coordinating multi-step invoice automation across specialized AI agents, database operations, and RPA-driven UI actions.",
-            "Extracting structured invoice data from documents so information could flow into the system without manual entry.",
-            "Supporting secure multi-tenant onboarding, provisioning, role-based access, invitations, and machine-to-machine authentication.",
-            "Keeping backend services, data models, frontend workflows, and Windows RPA execution synchronized in a production SaaS environment.",
-          ],
-          projectSolutions: [
-            "Built a multi-agent workflow engine with specialized Step, DB, and RPA agents for multi-step invoice automation.",
-            "Worked on invoice ingestion and data extraction using the Google Cloud Vision Python SDK to OCR invoice documents and parse structured fields.",
-            "Built an orchestration layer connecting database operations with RPA-driven UI actions over WebSockets for real-time task dispatch and status updates.",
-            "Implemented invitation-based registration, token validation, RBAC, user-tenant linkage, onboarding, password gating, session refresh, machine-to-machine authentication, normalized PostgreSQL schemas, and core REST APIs.",
-            "Contributed to the Next.js onboarding and admin experience using Material UI and React Hook Form, with the platform containerized in Docker and deployed on AWS.",
-          ],
-          description:
-            "An AI-powered accounts-payable automation SaaS built with Django DRF, Next.js, TypeScript, PostgreSQL, Docker, and AWS. The platform combines multi-agent orchestration, invoice OCR and document processing, database automation, RPA-driven UI actions over WebSockets, multi-tenant authentication and RBAC, and self-service onboarding workflows to automate accounts-payable tasks end to end.",
-          tags: [
-            "Django DRF",
-            "Next.js",
-            "TypeScript",
-            "PostgreSQL",
-            "Docker",
-            "AWS",
-            "Agentic AI",
-            "Google Cloud Vision",
-            "WebSockets",
-          ],
-          image: "/images/arslan-projects-images/aimyable.png",
-        },
-        {
-          id: "udu-platform",
-          category: "Social Platform",
-          title: "UDU",
-          projectTitle:
-            "UDU - Community Platform for Creating, Connecting & Contributing",
-
-          projectChallenges: [
-            "Designing a platform where users can easily create UDUs around topics and interests that matter to them.",
-            "Building a seamless social experience that allows users to discover UDUs, connect with others, and build meaningful communities.",
-            "Creating contribution workflows that help users share content with relevant audiences while keeping interactions simple and intuitive.",
-            "Implementing secure and flexible authentication with multiple sign-in options while maintaining a smooth onboarding experience.",
-          ],
-
-          projectSolutions: [
-            "Built a centralized platform that allows users to create and manage UDUs around their interests, topics, and communities.",
-            "Implemented user connection and community features that enable users to discover UDUs, connect with people, and expand their network.",
-            "Developed contribution workflows that allow users to publish and share content with audiences interested in specific UDUs.",
-            "Implemented secure authentication with username/email and password login, password recovery, email-code authentication, Google sign-in, and account registration.",
-            "Created a responsive and user-friendly interface focused on the platform's three core experiences: Create, Connect, and Contribute.",
-          ],
-
-          description:
-            "UDU is a community-driven social platform designed around three core experiences: Create, Connect, and Contribute. Users can create UDUs based on topics that matter to them, connect their UDUs with others to build communities and relationships, and contribute content to reach relevant audiences. The platform includes secure account authentication, social login, user onboarding, community discovery, and content contribution workflows within a modern and responsive web experience.",
-
-          tags: [
-            "Web Application",
-            "Social Platform",
-            "Community Platform",
-            "Authentication",
-            "Google OAuth",
-            "User Onboarding",
-            "Content Sharing",
-            "Responsive UI",
-          ],
-
-          image: "/images/arslan-projects-images/udu.png",
-        },
-      ],
-    },
-
-    contact: {
-      email: "arslan2591@gmail.com",
-      linkedin: "https://linkedin.com/in/arslan-syed",
-      github: "https://github.com/Arslan2591",
-    },
-
-    skillsTools: {
-      title: "Skills & Tools",
-      tagline: "Building production software across web, cloud, and AI.",
-      description:
-        "I build and ship production full-stack applications across Python and JavaScript ecosystems, with experience in APIs, databases, authentication, AI automation, cloud infrastructure, containers, testing, and CI/CD.",
-
-      items: [
-        // Core languages & application stack
-        { label: "Python", iconKey: "python" },
-        { label: "TypeScript", iconKey: "typescript" },
-        { label: "JavaScript", iconKey: "code" },
-        { label: "ReactJS", iconKey: "react" },
-        { label: "NextJS", iconKey: "next" },
-        { label: "Django / DRF", iconKey: "python" },
-        { label: "FastAPI", iconKey: "express" },
-        { label: "NodeJS", iconKey: "node" },
-        { label: "ExpressJS", iconKey: "express" },
-
-        // Databases & APIs
-        { label: "PostgreSQL", iconKey: "db" },
-        { label: "MongoDB", iconKey: "mongodb" },
-        { label: "Redis", iconKey: "db" },
-        { label: "Supabase", iconKey: "db" },
-        { label: "REST APIs", iconKey: "code" },
-        { label: "GraphQL APIs", iconKey: "code" },
-
-        // Frontend
-        { label: "Redux", iconKey: "react" },
-        { label: "Material UI", iconKey: "mui" },
-        { label: "Tailwind CSS", iconKey: "tailwind" },
-
-        // AI
-        { label: "Agentic AI", iconKey: "code" },
-        { label: "Generative AI", iconKey: "code" },
-        { label: "OpenAI API", iconKey: "code" },
-        { label: "Claude Code", iconKey: "code" },
-        { label: "Codex", iconKey: "code" },
-        { label: "Google Cloud Vision", iconKey: "code" },
-
-        // Cloud & DevOps
-        { label: "Docker", iconKey: "docker" },
-        { label: "AWS", iconKey: "server" },
-        { label: "Azure", iconKey: "server" },
-        { label: "GCP", iconKey: "server" },
-        { label: "GitHub Actions", iconKey: "github" },
-
-        // Tools
-        { label: "Git", iconKey: "git" },
-        { label: "GitHub", iconKey: "github" },
-        { label: "Postman", iconKey: "postman" },
-        { label: "npm", iconKey: "npm" },
       ],
     },
   },
