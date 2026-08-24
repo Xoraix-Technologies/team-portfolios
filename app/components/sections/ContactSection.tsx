@@ -9,10 +9,10 @@ import type { UserData } from "@/app/lib/site-data";
 type Status = "idle" | "sending" | "sent" | "error";
 
 const inputClass =
-  "h-14 w-full rounded-lg border-0 bg-[#eef3f9] px-4 text-base font-medium text-[var(--text-main)] placeholder:text-[var(--text-soft)] outline-none transition focus:ring-2 focus:ring-[var(--primary)]/25 disabled:cursor-not-allowed disabled:opacity-60";
+  "h-14 w-full rounded-lg border-0 bg-[#eef3f9] px-4 text-base font-medium text-[var(--text-main)] placeholder:text-gray-500 outline-none transition focus:ring-2 focus:ring-[var(--primary)]/25 disabled:cursor-not-allowed disabled:opacity-60";
 
 const textareaClass =
-  "min-h-[154px] w-full resize-none rounded-lg border-0 bg-[#eef3f9] px-4 py-4 text-base font-medium text-[var(--text-main)] placeholder:text-[var(--text-soft)] outline-none transition focus:ring-2 focus:ring-[var(--primary)]/25 disabled:cursor-not-allowed disabled:opacity-60";
+  "min-h-[154px] w-full resize-none rounded-lg border-0 bg-[#eef3f9] px-4 py-4 text-base font-medium text-[var(--text-main)] placeholder:text-gray-500 outline-none transition focus:ring-2 focus:ring-[var(--primary)]/25 disabled:cursor-not-allowed disabled:opacity-60";
 
 export default function ContactSection({
   user,

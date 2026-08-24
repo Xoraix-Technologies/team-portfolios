@@ -51,7 +51,7 @@ export default function AboutSection({
           <div className="grid gap-12 lg:grid-cols-[0.42fr_1fr] lg:items-start">
             <div>
               <h2 className="text-4xl font-black tracking-[-0.04em] text-[var(--text-main)] sm:text-5xl">
-                <span className="bg-[#9eeef8] px-1">Skills</span> &amp; Tools
+                Skills &amp; Tools
               </h2>
               <p className="mt-6 max-w-md text-2xl font-bold leading-snug text-[var(--text-soft)]">
                 {skillsTools.tagline}
@@ -62,8 +62,8 @@ export default function AboutSection({
             </div>
 
             <div className="flex flex-wrap content-start gap-5 pt-1">
-              {skillsTools.items.map((item) => (
-                <SkillToolPill key={item.label} item={item} />
+              {skillsTools.items.map((item, index) => (
+                <SkillToolPill key={`${item.label}-${index}`} item={item} />
               ))}
             </div>
           </div>

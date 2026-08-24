@@ -55,10 +55,10 @@ export default function Hero({
             {hero.shortIntro}
           </p>
 
-          <div className="mt-10 flex flex-wrap items-center gap-4">
+          <div className="mt-10 flex flex-nowrap items-center gap-3 max-sm:flex-col max-sm:items-stretch">
             <Link
               href={projectsHref}
-              className="inline-flex h-12 items-center justify-center gap-3 rounded-lg bg-[var(--primary)] px-7 text-sm font-black tracking-[0.1em] text-white transition hover:bg-[var(--primary-hover)]"
+              className="inline-flex h-12 shrink-0 items-center justify-center gap-3 whitespace-nowrap rounded-lg bg-[var(--primary)] px-6 text-sm font-black tracking-[0.1em] text-white transition hover:bg-[var(--primary-hover)]"
             >
               {hero.ctaText}
               <ArrowRight size={18} strokeWidth={2.4} />
@@ -69,7 +69,7 @@ export default function Hero({
                 <a
                   href={resumeUrl}
                   download={downloadName}
-                  className="inline-flex h-12 items-center justify-center gap-3 rounded-lg border-2 border-[var(--primary)] bg-transparent px-7 text-sm font-black tracking-[0.1em] text-[var(--primary)] transition hover:bg-white"
+                  className="inline-flex h-12 shrink-0 items-center justify-center gap-3 whitespace-nowrap rounded-lg border-2 border-[var(--primary)] bg-transparent px-6 text-sm font-black tracking-[0.1em] text-[var(--primary)] transition hover:bg-white"
                 >
                   <Download size={17} strokeWidth={2.4} />
                   {hero.cvText}
@@ -78,7 +78,7 @@ export default function Hero({
                   href={resumeUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex h-12 items-center justify-center gap-3 rounded-lg border-2 border-[var(--primary-soft-border)] bg-white/70 px-7 text-sm font-black tracking-[0.1em] text-[var(--primary)] transition hover:border-[var(--primary)] hover:bg-white"
+                  className="inline-flex h-12 shrink-0 items-center justify-center gap-3 whitespace-nowrap rounded-lg border-2 border-[var(--primary-soft-border)] bg-white/70 px-6 text-sm font-black tracking-[0.1em] text-[var(--primary)] transition hover:border-[var(--primary)] hover:bg-white"
                 >
                   <Eye size={17} strokeWidth={2.4} />
                   View Resume
@@ -88,7 +88,7 @@ export default function Hero({
               <button
                 type="button"
                 disabled
-                className="inline-flex h-12 cursor-not-allowed items-center justify-center rounded-lg border-2 border-[var(--input-border)] px-7 text-sm font-black tracking-[0.1em] text-[var(--text-subtle)]"
+                className="inline-flex h-12 shrink-0 cursor-not-allowed items-center justify-center whitespace-nowrap rounded-lg border-2 border-[var(--input-border)] px-6 text-sm font-black tracking-[0.1em] text-[var(--text-subtle)]"
                 title="Resume not available"
               >
                 CV Not Available
