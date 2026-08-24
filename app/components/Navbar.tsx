@@ -1,19 +1,19 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { Menu } from "lucide-react";
 import Container from "./Container";
 import { USERS } from "../lib/site-data";
 
 type NavItem = {
-  label: string;
-  kind: "about" | "tech" | "skills" | "projects" | "contact";
+  label: "About" | "Projects" | "Contact";
+  kind: "about" | "projects" | "contact";
 };
 
 const nav: NavItem[] = [
   { kind: "about", label: "About" },
-  { kind: "tech", label: "Tech" },
-  { kind: "skills", label: "Skills" },
   { kind: "projects", label: "Projects" },
   { kind: "contact", label: "Contact" },
 ];
@@ -38,10 +38,6 @@ function buildHref(kind: NavItem["kind"], username: string) {
   switch (kind) {
     case "about":
       return `/${username}#about`;
-    case "tech":
-      return `/${username}#tech`;
-    case "skills":
-      return `/${username}#skills`;
     case "projects":
       return `/${username}#projects`;
     case "contact":
@@ -52,60 +48,112 @@ function buildHref(kind: NavItem["kind"], username: string) {
 export default function Navbar() {
   const pathname = usePathname();
   const username = getUsernameFromPath(pathname);
+  const fallbackUser = USERS[0]?.slug ?? "abu-bakar-saddique";
+  const activeUser = username ?? fallbackUser;
+  const user =
+    USERS.find((u) => u.slug.toLowerCase() === activeUser.toLowerCase()) ??
+    USERS[0];
 
   // Directory mode ("/"): show a simple navbar.
   if (pathname === "/") {
     return (
-      <header className="sticky top-0 z-50 border-b border-white/10 bg-[#060d16]/80 backdrop-blur">
-        <Container>
-          <div className="flex h-16 items-center justify-between">
-            <Link
-              href="/"
-              className="font-semibold tracking-tight text-slate-100"
-            >
-              Portfolios
-            </Link>
+      <HeaderShell>
+        <Brand />
 
-            <div />
-          </div>
-        </Container>
-      </header>
+        <nav className="hidden items-center gap-8 md:flex">
+          <Link
+            href="/"
+            className="text-xs font-extrabold uppercase tracking-[0.18em] text-[var(--primary)]"
+          >
+            Team
+          </Link>
+        </nav>
+
+        <HireLink username={activeUser} />
+      </HeaderShell>
     );
   }
 
   // If user opens "/" (no username), choose a default user (optional)
   // You can also redirect "/" to first user via middleware, but this is simplest.
-  const fallbackUser = USERS[0]?.slug ?? "abu-bakar-saddique";
-  const activeUser = username ?? fallbackUser;
 
   return (
-    <header className="sticky top-0 z-50 border-b border-white/10 bg-[#060d16]/80 backdrop-blur">
+    <HeaderShell>
+      <Brand avatar={user?.contact?.avatar ?? user?.about?.imageSrc} />
+
+      <nav className="hidden items-center gap-10 lg:flex">
+        {nav.map((item) => {
+          const href = buildHref(item.kind, activeUser);
+          const isActive =
+            item.kind === "projects"
+              ? pathname.includes("/projects/")
+              : pathname.includes(item.kind);
+
+          return (
+            <Link
+              key={item.kind}
+              href={href}
+              className={[
+                "relative py-2 text-xs font-extrabold tracking-[0.18em] transition hover:text-[var(--primary)]",
+                isActive
+                  ? "text-[var(--primary)] after:absolute after:inset-x-0 after:-bottom-2 after:h-0.5 after:bg-[var(--primary)]"
+                  : "text-[var(--text-soft)]",
+              ].join(" ")}
+            >
+              {item.label}
+            </Link>
+          );
+        })}
+      </nav>
+
+      <div className="flex items-center gap-3">
+        <HireLink username={activeUser} />
+        <button
+          type="button"
+          aria-label="Open navigation"
+          className="grid h-10 w-10 place-items-center rounded-lg border border-[var(--border)] text-[var(--text-soft)] lg:hidden"
+        >
+          <Menu size={20} />
+        </button>
+      </div>
+    </HeaderShell>
+  );
+}
+
+function HeaderShell({ children }: { children: React.ReactNode }) {
+  return (
+    <header className="sticky top-0 z-50 border-b border-[var(--border)] bg-[var(--page-bg)]/95 backdrop-blur">
       <Container>
-        <div className="flex h-16 items-center justify-between">
-          <Link
-            href="/"
-            className="font-semibold tracking-tight text-slate-100"
-          >
-            Portfolios
-          </Link>
-
-          <nav className="flex items-center gap-2">
-            {nav.map((item) => {
-              const href = buildHref(item.kind, activeUser);
-
-              return (
-                <Link
-                  key={item.kind}
-                  href={href}
-                  className="rounded-lg px-3 py-2 text-sm font-medium text-slate-300 transition hover:bg-white/5 hover:text-white"
-                >
-                  {item.label}
-                </Link>
-              );
-            })}
-          </nav>
+        <div className="flex min-h-[64px] items-center justify-between gap-4">
+          {children}
         </div>
       </Container>
     </header>
+  );
+}
+
+function Brand({ avatar }: { avatar?: string }) {
+  return (
+    <Link href="/" className="flex items-center gap-3">
+      {avatar ? (
+        <span className="relative hidden h-9 w-9 overflow-hidden rounded-full border border-[var(--border)] bg-[var(--surface)] sm:inline-flex">
+          <Image src={avatar} alt="" fill className="object-cover" sizes="36px" />
+        </span>
+      ) : null}
+      <span className="text-2xl font-black tracking-[-0.02em] text-[var(--primary)]">
+        Portfolios
+      </span>
+    </Link>
+  );
+}
+
+function HireLink({ username }: { username: string }) {
+  return (
+    <Link
+      href={`/${username}#contact`}
+      className="inline-flex h-10 items-center justify-center rounded-lg bg-[var(--primary)] px-6 text-xs font-black tracking-[0.16em] text-white transition hover:bg-[var(--primary-hover)]"
+    >
+      Hire Me
+    </Link>
   );
 }

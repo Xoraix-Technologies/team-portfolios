@@ -365,7 +365,6 @@ export const USERS: UserData[] = [
             "WebSockets",
           ],
           image: "/images/arslan-projects-images/aimyable.png",
-          sourceUrl: "#",
         },
         {
           id: "udu-platform",
@@ -404,7 +403,6 @@ export const USERS: UserData[] = [
           ],
 
           image: "/images/arslan-projects-images/udu.png",
-          sourceUrl: "#",
         },
         {
           id: "sweet-celebrationz",
@@ -412,16 +410,15 @@ export const USERS: UserData[] = [
           title: "Sweet Celebrationz",
           projectTitle: "Sweet Celebrationz - Ecommerce Bakery Website",
           projectChallenges: [
-            "Performance requirements...",
-            "Scalability...",
-            "Database interaction...",
-            "Third-party integration...",
+            "Keeping storefront pages fast and responsive across product-heavy browsing flows.",
+            "Structuring reusable product, category, and promotion components for future catalog growth.",
+            "Presenting product information clearly across mobile and desktop layouts.",
+            "Preparing the frontend for integration with commerce, inventory, and checkout services.",
           ],
           description:
             "An ecommerce bakery storefront focused on responsive, user-friendly shopping experiences, with product browsing, category-based listings, promotions, and reusable frontend components. The project reflects my production experience with React, Next.js, TypeScript, and responsive web interfaces.",
           tags: ["React", "Next.js", "TypeScript"],
           image: "/images/saddam-projects-images/Sweet-Calbration.png",
-          sourceUrl: "#",
         },
         {
           id: "halo-system",
@@ -439,7 +436,6 @@ export const USERS: UserData[] = [
             "An event operations platform for incident management and real-time coordination, with dashboards, activity tracking, task workflows, live monitoring, and map-based views. The project reflects my full-stack experience with React, API-driven applications, data-intensive workflows, and mapping integrations.",
           tags: ["Django", "React", "Node.js", "Redux"],
           image: "/images/saddam-projects-images/Halo.jpg",
-          sourceUrl: "#",
         },
         {
           id: "traxidy",
@@ -461,7 +457,6 @@ export const USERS: UserData[] = [
           ],
           tags: ["React", "Next.js", "TypeScript"],
           image: "/images/saddam-projects-images/Tarxidy.jpeg",
-          sourceUrl: "#",
         },
         {
           id: "ready-hire",
@@ -479,7 +474,6 @@ export const USERS: UserData[] = [
           ],
           tags: ["React", "Next.js", "TypeScript"],
           image: "/images/saddam-projects-images/Ready-Hire.jpg",
-          sourceUrl: "#",
         },
         {
           id: "banyo-pos",
@@ -497,7 +491,6 @@ export const USERS: UserData[] = [
             "A production POS and inventory web application built with a Django backend and Next.js frontend. I implemented REST APIs, real-time inventory management with Django REST Framework and MongoDB, a responsive server-rendered POS UI, AWS EC2 infrastructure, and GitHub Actions CI/CD.",
           tags: ["Django", "React", "Next.js", "Postgres"],
           image: "/images/saddam-projects-images/POS.jpg",
-          sourceUrl: "#",
         },
       ],
     },
@@ -505,7 +498,7 @@ export const USERS: UserData[] = [
     contact: {
       email: "saddamhussainuos04@gmail.com",
       linkedin: "http://www.linkedin.com/in/senior-full-stack-developer",
-      github: "https://github.com/saddam-hussain",
+      github: "https://github.com/saddamAT",
     },
 
     skillsTools: {
@@ -529,6 +522,10 @@ export const USERS: UserData[] = [
 
         // Backend
         { label: "ExpressJS", iconKey: "express" },
+        { label: "LangGraph", iconKey: "code" },
+        { label: "LangSmith", iconKey: "code" },
+        { label: "LLM Evaluations", iconKey: "brackets" },
+        { label: "AI", iconKey: "palette" },
 
         // Infrastructure / DevOps
         { label: "Docker", iconKey: "docker" },
@@ -558,9 +555,9 @@ export const USERS: UserData[] = [
         "Agentic AI",
       ],
       ctaText: "View My Work",
-      cvText: "CV Available on Request",
-      // resumeUrl intentionally left empty
-      // resumeFileName intentionally left empty
+      cvText: "Download CV",
+      resumeUrl: "/resumes/arslan-syed.pdf",
+      resumeFileName: "arslan-syed.pdf",
     },
 
     about: {
@@ -726,7 +723,6 @@ export const USERS: UserData[] = [
             "GitHub Actions",
           ],
           image: "/images/arslan-projects-images/POS.jpg",
-          sourceUrl: "#",
         },
         {
           id: "aimyable-dashboard",
@@ -761,7 +757,6 @@ export const USERS: UserData[] = [
             "WebSockets",
           ],
           image: "/images/arslan-projects-images/aimyable.png",
-          sourceUrl: "#",
         },
         {
           id: "udu-platform",
@@ -800,15 +795,14 @@ export const USERS: UserData[] = [
           ],
 
           image: "/images/arslan-projects-images/udu.png",
-          sourceUrl: "#",
         },
       ],
     },
 
     contact: {
       email: "arslan2591@gmail.com",
-      linkedin: "https://linkedin.com",
-      github: "https://github.com/arslan-syed",
+      linkedin: "https://linkedin.com/in/arslan-syed",
+      github: "https://github.com/Arslan2591",
     },
 
     skillsTools: {
@@ -877,7 +871,7 @@ export const USERS: UserData[] = [
         "Crafting innovative, high-performance web applications with React, Next.js, and Node.js—turning ideas into reality through modern technologies and clean code.",
       techPills: ["Next.js", "React", "TypeScript", "Tailwind CSS", "MUI"],
       ctaText: "View My Work",
-      cvText: "CV Not Available",
+      cvText: "Download CV",
       resumeUrl: "/resumes/abu-bakar-saddique.pdf",
       resumeFileName: "abu-bakar-saddique.pdf",
     },
@@ -904,12 +898,23 @@ export const USERS: UserData[] = [
       ],
       experience: [
         {
-          title: "Frontend Engineer (React, Next.js)",
-          company: "STech Experts",
-          date: "Mar 2025",
+          title: "Senior Full Stack Engineer",
+          company: "Stech Experts Ltd - Remote",
+          date: "Jan 2024 - Present",
           bullets: [
-            "Build and ship modern web apps using Next.js, React, and TypeScript with reusable UI components.",
-            "Improve performance, accessibility, and SEO through clean architecture, best practices, and code reviews.",
+            "Developed frontend features for AI-powered SaaS and ecommerce automation platforms using Next.js, React, TypeScript, Material UI, React Hook Form, NextAuth, and Django REST APIs.",
+            "Built onboarding, registration, invitation, admin, process-builder, WhatsApp dashboard, POS, order management, invoicing, and tenant management workflows with typed payloads, validations, and reusable components.",
+            "Resolved critical Next.js SSR, App Router, TypeScript, API integration, authentication, and real-time UI synchronization issues while improving responsive UX, loading states, error handling, and production stability.",
+          ],
+        },
+        {
+          title: "Frontend Developer",
+          company: "Glixen Technologies - Lahore",
+          date: "Feb 2021 - Dec 2023",
+          bullets: [
+            "Engineered a scalable React.js and TypeScript frontend for a multi-role helpdesk platform covering admins, support managers, agents, developers, and customers.",
+            "Built ticket creation, assignment, escalation, priority handling, status transition, resolution tracking, comments, attachments, permissions, filters, forms, modals, data tables, and conversation panel interfaces.",
+            "Integrated REST APIs and applied TypeScript-driven component architecture plus React Testing Library checks to improve code quality, maintainability, and frontend reliability.",
           ],
         },
       ],
@@ -988,7 +993,6 @@ export const USERS: UserData[] = [
             "A point-of-sale and storefront interface to manage products and sales with reusable components and fast workflows.",
           tags: ["Next.js", "TypeScript", "React", "Tailwind CSS"],
           image: "/images/abu-bakar-projects-images/POS.jpg",
-          sourceUrl: "#",
         },
 
         {
@@ -1003,7 +1007,6 @@ export const USERS: UserData[] = [
             "A product analytics dashboard designed to monitor key metrics and performance in one place with role-based access.",
           tags: ["Next.js", "TypeScript", "React", "Tailwind CSS"],
           image: "/images/abu-bakar-projects-images/aimyable.png",
-          sourceUrl: "#",
         },
         {
           id: "ticksy",
@@ -1021,13 +1024,12 @@ export const USERS: UserData[] = [
           tags: ["Next.js", "TypeScript", "React", "Tailwind CSS"],
           image: "/images/abu-bakar-projects-images/Ticksy.png",
           demoUrl: "https://support.ticksy.com/",
-          sourceUrl: "#",
         },
       ],
     },
 
     contact: {
-      email: "abubakar041295@gmail.com",
+      email: "abu.bakar041295@gmail.com",
       linkedin: "https://linkedin.com/in/abubakar-saddique-034231167",
       github: "https://github.com/Abu-Bakar-Dev",
     },
@@ -1063,7 +1065,7 @@ export const USERS: UserData[] = [
   },
 
   {
-    slug: "Taha-bin-imran",
+    slug: "taha-bin-imran",
 
     hero: {
       pill: "Full-Stack Engineer (React, Next.js)",
@@ -1082,8 +1084,6 @@ export const USERS: UserData[] = [
       ],
       ctaText: "View My Work",
       cvText: "CV Not Available",
-      resumeUrl: "/resumes/taha-bin-imran.pdf",
-      resumeFileName: "taha-bin-imran.pdf",
     },
 
     about: {
@@ -1109,7 +1109,7 @@ export const USERS: UserData[] = [
       experience: [
         {
           title: "Full-Stack Developer",
-          company: "Your Company",
+          company: "Independent / Project Work",
           date: "2024 - Present",
           bullets: [
             "Develop UI screens using React/Next.js and Tailwind with a component-driven approach.",
@@ -1181,16 +1181,15 @@ export const USERS: UserData[] = [
           title: "Sweet Celebrationz",
           projectTitle: "Sweet Celebrationz - Ecommerce Bakery Website",
           projectChallenges: [
-            "Performance requirements...",
-            "Scalability...",
-            "Database interaction...",
-            "Third-party integration...",
+            "Keeping storefront pages fast and responsive across product-heavy browsing flows.",
+            "Structuring reusable product, category, and promotion components for future catalog growth.",
+            "Presenting product information clearly across mobile and desktop layouts.",
+            "Preparing the frontend for integration with commerce, inventory, and checkout services.",
           ],
           description:
             "An ecommerce bakery website featuring a modern storefront, product browsing, category-based listings, promotions, and a responsive design optimized for mobile shopping.",
           tags: ["React", "Next.js", "TypeScript"],
           image: "/images/saddam-projects-images/Sweet-Calbration.png",
-          sourceUrl: "#",
         },
         {
           id: "halo-system",
@@ -1208,7 +1207,6 @@ export const USERS: UserData[] = [
             "An event operations platform built for managing incidents and daily operations. Includes an incident dashboard, activity logs, task tracking, map view, and live monitoring panels for real-time coordination.",
           tags: ["Django", "React", "Node.js", "Redux"],
           image: "/images/saddam-projects-images/Halo.jpg",
-          sourceUrl: "#",
         },
         {
           id: "traxidy",
@@ -1230,7 +1228,6 @@ export const USERS: UserData[] = [
           ],
           tags: ["React", "Next.js", "TypeScript"],
           image: "/images/saddam-projects-images/Tarxidy.jpeg",
-          sourceUrl: "#",
         },
         {
           id: "ready-hire",
@@ -1248,7 +1245,6 @@ export const USERS: UserData[] = [
           ],
           tags: ["React", "Next.js", "TypeScript"],
           image: "/images/saddam-projects-images/Ready-Hire.jpg",
-          sourceUrl: "#",
         },
         {
           id: "banyo-pos",
@@ -1266,7 +1262,6 @@ export const USERS: UserData[] = [
             "A multi-purpose POS suite for managing products, invoices, customer records, and sales workflows with a clean dashboard and fast day-to-day operations.",
           tags: ["Django", "React", "Next.js", "Postgres"],
           image: "/images/saddam-projects-images/POS.jpg",
-          sourceUrl: "#",
         },
       ],
     },
@@ -1485,7 +1480,6 @@ export const USERS: UserData[] = [
             "Cloud Services",
           ],
           image: "/images/farhan-projects-images/xoraix.png",
-          sourceUrl: "#",
         },
 
         {
@@ -1515,7 +1509,6 @@ export const USERS: UserData[] = [
             "Client Retention",
           ],
           image: "/images/farhan-projects-images/gamechaser.png",
-          sourceUrl: "#",
         },
 
         {
@@ -1546,7 +1539,6 @@ export const USERS: UserData[] = [
           ],
           image: "/images/farhan-projects-images/dev-console.png",
           demoUrl: "https://support.ticksy.com/",
-          sourceUrl: "#",
         },
       ],
     },

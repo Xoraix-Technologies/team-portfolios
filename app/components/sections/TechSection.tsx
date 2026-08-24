@@ -1,5 +1,13 @@
 import type { UserData } from "@/app/lib/site-data";
-import { Code, Database, Layers, Palette, Server } from "lucide-react";
+import {
+  Bot,
+  Code,
+  Database,
+  GitBranch,
+  Layers,
+  Palette,
+  Server,
+} from "lucide-react";
 
 export default function TechSection({ tech }: { tech: UserData["tech"] }) {
   return (
@@ -8,69 +16,79 @@ export default function TechSection({ tech }: { tech: UserData["tech"] }) {
       className="relative mx-auto w-full max-w-6xl scroll-mt-24 px-6 py-20"
     >
       <div className="text-center">
-        <h2 className="text-4xl font-extrabold tracking-tight text-slate-100">
-          {tech.heading} <span className="text-[#5d6bff]">.</span>
+        <h2 className="text-4xl font-black tracking-[-0.03em] text-[var(--text-main)] sm:text-5xl">
+          Core Expertise
         </h2>
-        <p className="mx-auto mt-4 max-w-2xl text-sm leading-7 text-slate-400 sm:text-base">
+        <p className="mx-auto mt-5 max-w-2xl text-base leading-7 text-[var(--text-soft)]">
           {tech.description}
         </p>
       </div>
 
-      <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-        {tech.techs.map((t) => {
-          return (
-            <div
-              key={t.title}
-              className="rounded-2xl bg-[#0b2542] p-6 shadow-[0_16px_50px_rgba(0,0,0,0.45)] ring-1 ring-slate-800/40"
-            >
-              <div className="flex items-start gap-4">
-                <span className="mt-1 inline-flex h-10 w-10 items-center justify-center rounded-xl bg-[#091d33] text-[#5d6bff] ring-1 ring-slate-700/40">
-                  <TechIcon iconKey={t.iconKey} />
+      <div className="mt-14 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+        {tech.techs.map((item) => (
+          <article
+            key={item.title}
+            className="group min-h-[290px] rounded-3xl border border-[var(--border)] bg-[var(--surface)] p-8 transition hover:-translate-y-1 hover:shadow-[0_18px_38px_rgb(var(--shadow-color)/0.10)]"
+          >
+            <span className="grid h-12 w-12 place-items-center rounded-xl bg-[#e7edf6] text-[var(--primary)] transition group-hover:bg-[var(--primary)] group-hover:text-white">
+              <TechIcon iconKey={item.iconKey} title={item.title} />
+            </span>
+
+            <h3 className="mt-8 text-2xl font-black tracking-[-0.02em] text-[var(--text-main)]">
+              {item.title}
+            </h3>
+            <p className="mt-4 text-base leading-7 text-[var(--text-soft)]">
+              {item.description}
+            </p>
+
+            <div className="mt-8 flex flex-wrap gap-2">
+              {deriveTags(item.title).map((tag) => (
+                <span
+                  key={tag}
+                  className="rounded-full bg-[var(--primary-soft)] px-3 py-1 text-xs font-extrabold tracking-[0.1em] text-[var(--primary)]"
+                >
+                  {tag}
                 </span>
-                <div>
-                  <h3 className="text-lg font-extrabold text-slate-100">
-                    {t.title}
-                  </h3>
-                  <p className="mt-1 text-sm leading-6 text-slate-300">
-                    {t.description}
-                  </p>
-                </div>
-              </div>
+              ))}
             </div>
-          );
-        })}
+          </article>
+        ))}
       </div>
     </section>
   );
 }
 
-function TechIcon({ iconKey }: { iconKey: UserData["tech"]["techs"][number]["iconKey"] }) {
+function TechIcon({
+  iconKey,
+  title,
+}: {
+  iconKey: UserData["tech"]["techs"][number]["iconKey"];
+  title: string;
+}) {
+  if (title.toLowerCase().includes("ai")) return <Bot size={21} />;
+
   switch (iconKey) {
     case "layers":
-      return <Layers size={18} />;
+      return <Layers size={21} />;
     case "code":
-      return <Code size={18} />;
+      return <Code size={21} />;
     case "server":
-      return <Server size={18} />;
+      return <Server size={21} />;
     case "db":
-      return <Database size={18} />;
+      return <Database size={21} />;
     case "palette":
-      return <Palette size={18} />;
+      return <Palette size={21} />;
     case "github":
-      return <GithubMark />;
+      return <GitBranch size={21} />;
+    case "docker":
+      return <Server size={21} />;
   }
 }
 
-function GithubMark() {
-  return (
-    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-      <path
-        d="M9 19c-4 1.5-4-2.5-6-3m12 6v-3.2c0-.9.3-1.6.8-2-2.7-.3-5.6-1.3-5.6-5.8 0-1.3.5-2.4 1.2-3.2-.1-.3-.5-1.6.1-3.3 0 0 1-.3 3.3 1.2.9-.3 1.9-.4 2.9-.4s2 .1 2.9.4c2.3-1.5 3.3-1.2 3.3-1.2.6 1.7.2 3 .1 3.3.8.8 1.2 1.9 1.2 3.2 0 4.5-2.9 5.5-5.6 5.8.5.4.9 1.3.9 2.6V22"
-        stroke="currentColor"
-        strokeWidth="1.7"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-    </svg>
-  );
+function deriveTags(title: string) {
+  return title
+    .split(/[&/,]/)
+    .map((tag) => tag.trim())
+    .filter(Boolean)
+    .slice(0, 2);
 }

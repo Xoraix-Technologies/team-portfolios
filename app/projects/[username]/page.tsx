@@ -4,6 +4,7 @@ import { getUserByParam } from "@/app/lib/site-data";
 import Image from "next/image";
 import { useMemo, useState } from "react";
 import Link from "next/link";
+import { ArrowRight } from "lucide-react";
 import type { Project } from "@/app/lib/site-data";
 
 type Category = "All" | Project["category"];
@@ -20,60 +21,56 @@ export default function ProjectsPage({
 
   const filtered = useMemo(() => {
     if (active === "All") return projects;
-    return projects.filter((p) => p.category === active);
+    return projects.filter((project) => project.category === active);
   }, [active, projects]);
 
   const categories = useMemo(() => {
     const set = new Set<Project["category"]>();
-    projects.forEach((p) => set.add(p.category));
+    projects.forEach((project) => set.add(project.category));
     return ["All", ...Array.from(set)] as Category[];
   }, [projects]);
 
   if (!user) return null;
 
   return (
-    <main className="relative min-h-screen overflow-hidden bg-[#060d16]">
-      <div className="pointer-events-none absolute left-0 right-0 top-0 h-px bg-[#5d6bff]/30" />
+    <main className="relative min-h-screen overflow-hidden bg-[var(--page-bg)]">
+      <section className="relative mx-auto w-full max-w-6xl px-6 pb-28 pt-20">
+        <div className="max-w-3xl">
+          <h1 className="text-4xl font-black tracking-[-0.03em] text-[var(--text-main)] sm:text-5xl">
+            Project Gallery
+          </h1>
 
-      <div className="pointer-events-none absolute inset-0">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_rgba(93,107,255,0.10)_0%,_rgba(6,13,22,0.35)_35%,_rgba(6,13,22,1)_72%)]" />
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_rgba(93,107,255,0.12)_0%,_rgba(6,13,22,0)_55%)]" />
-      </div>
-
-      <section className="relative mx-auto w-full max-w-6xl px-6 pb-28 pt-24">
-        <div className="text-center">
-          <h2 className="text-4xl font-extrabold tracking-tight text-slate-100">
-            My <span className="text-[#5d6bff]">Projects</span>
-          </h2>
-
-          <p className="mx-auto mt-4 max-w-xl text-sm leading-6 text-slate-400 sm:text-base">
+          <p className="mt-6 text-lg leading-8 text-[var(--text-soft)]">
             {user.projects.description}
           </p>
         </div>
 
-        <div className="mt-12 flex items-center justify-start">
-          <div className="inline-flex flex-wrap overflow-hidden rounded-lg bg-black/40 shadow-[0_10px_30px_rgba(0,0,0,0.35)] ring-1 ring-slate-800/50">
-            {categories.map((category) => (
-              <button
-                key={category}
-                type="button"
-                onClick={() => setActive(category)}
-                className={[
-                  "px-5 py-2 text-sm font-semibold transition",
-                  active === category
-                    ? "bg-[#5d6bff] text-white"
-                    : "bg-transparent text-slate-300 hover:bg-white/5",
-                ].join(" ")}
-              >
-                {category}
-              </button>
-            ))}
-          </div>
+        <div className="mt-10 flex flex-wrap gap-4">
+          {categories.map((category) => (
+            <button
+              key={category}
+              type="button"
+              onClick={() => setActive(category)}
+              className={[
+                "h-10 rounded-full border px-6 text-xs font-black tracking-[0.14em] transition",
+                active === category
+                  ? "border-[var(--primary)] bg-[var(--primary)] text-white"
+                  : "border-[#b8c3d4] bg-transparent text-[var(--text-soft)] hover:border-[var(--primary)] hover:text-[var(--primary)]",
+              ].join(" ")}
+            >
+              {category}
+            </button>
+          ))}
         </div>
 
-        <div className="mt-12 grid gap-10 sm:grid-cols-2 lg:grid-cols-3">
-          {filtered.map((p) => (
-            <ProjectCard key={p.id} project={p} username={params.username} />
+        <div className="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+          {filtered.map((project, index) => (
+            <ProjectCard
+              key={project.id}
+              project={project}
+              username={params.username}
+              isWide={index === 0 || index % 5 === 3}
+            />
           ))}
         </div>
       </section>
@@ -84,29 +81,61 @@ export default function ProjectsPage({
 function ProjectCard({
   project,
   username,
+  isWide,
 }: {
   project: Project;
   username: string;
+  isWide: boolean;
 }) {
   return (
-    <Link href={`/projects/${username}/${project.id}`}>
-      <article className="group relative overflow-hidden rounded-2xl bg-[#0b2542] shadow-[0_20px_60px_rgba(0,0,0,0.55)] ring-1 ring-slate-800/40 transition-transform duration-500 hover:-translate-y-2 cursor-pointer">
-        <div className="relative w-full aspect-[4/5]">
+    <Link
+      href={`/projects/${username}/${project.id}`}
+      className={isWide ? "md:col-span-2" : undefined}
+    >
+      <article
+        className={[
+          "group h-full overflow-hidden rounded-xl border border-[var(--border)] bg-[var(--surface)] transition hover:-translate-y-1 hover:shadow-[0_18px_38px_rgb(var(--shadow-color)/0.11)]",
+          isWide ? "grid md:grid-cols-[1fr_1fr]" : "",
+        ].join(" ")}
+      >
+        <div
+          className={[
+            "relative overflow-hidden bg-[var(--surface-strong)]",
+            isWide ? "min-h-[310px]" : "aspect-[1.45/1]",
+          ].join(" ")}
+        >
           <Image
             src={project.image}
             alt={project.title}
             fill
-            className="object-cover object-top transition-transform duration-700 group-hover:scale-105"
-            sizes="(max-width: 1024px) 100vw, 420px"
+            className="object-cover object-top transition duration-700 group-hover:scale-105"
+            sizes={isWide ? "(max-width: 1024px) 100vw, 520px" : "380px"}
           />
+        </div>
 
-          <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
-
-          <div className="absolute bottom-0 w-full px-6 pb-6">
-            <h3 className="text-2xl font-extrabold text-white tracking-tight transition-colors duration-300 group-hover:text-[#5d6bff]">
-              {project.title}
-            </h3>
+        <div className="flex min-h-[250px] flex-col p-8">
+          <div className="flex flex-wrap gap-2">
+            {project.tags.slice(0, 2).map((tag) => (
+              <span
+                key={tag}
+                className="rounded-full bg-[var(--primary-soft)] px-3 py-1 text-xs font-black tracking-[0.1em] text-[var(--primary)]"
+              >
+                {tag}
+              </span>
+            ))}
           </div>
+
+          <h2 className="mt-7 text-2xl font-black tracking-[-0.02em] text-[var(--text-main)]">
+            {project.title}
+          </h2>
+          <p className="mt-4 line-clamp-4 text-base leading-7 text-[var(--text-soft)]">
+            {project.description}
+          </p>
+
+          <span className="mt-auto inline-flex items-center gap-3 pt-8 text-xs font-black tracking-[0.16em] text-[var(--primary)]">
+            View Case Study
+            <ArrowRight size={17} />
+          </span>
         </div>
       </article>
     </Link>

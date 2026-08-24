@@ -1,18 +1,18 @@
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
-import { Laptop } from "lucide-react";
+import { ChevronDown, Mail, MapPin, Send } from "lucide-react";
+import { FaGithub, FaLinkedinIn } from "react-icons/fa6";
 import type { UserData } from "@/app/lib/site-data";
 
 type Status = "idle" | "sending" | "sent" | "error";
 
 const inputClass =
-  "h-12 w-full rounded-xl border border-white/25 bg-white/10 px-4 text-sm font-medium text-white placeholder:text-white/75 caret-white outline-none transition focus:border-[#ff3b00]/70 focus:bg-white/15 focus:ring-1 focus:ring-[#ff3b00]/50 disabled:cursor-not-allowed disabled:opacity-60";
+  "h-14 w-full rounded-lg border-0 bg-[#eef3f9] px-4 text-base font-medium text-[var(--text-main)] placeholder:text-[var(--text-soft)] outline-none transition focus:ring-2 focus:ring-[var(--primary)]/25 disabled:cursor-not-allowed disabled:opacity-60";
 
 const textareaClass =
-  "min-h-[150px] w-full resize-none rounded-xl border border-white/25 bg-white/10 px-4 py-3 text-sm font-medium text-white placeholder:text-white/75 caret-white outline-none transition focus:border-[#ff3b00]/70 focus:bg-white/15 focus:ring-1 focus:ring-[#ff3b00]/50 disabled:cursor-not-allowed disabled:opacity-60";
+  "min-h-[154px] w-full resize-none rounded-lg border-0 bg-[#eef3f9] px-4 py-4 text-base font-medium text-[var(--text-main)] placeholder:text-[var(--text-soft)] outline-none transition focus:ring-2 focus:ring-[var(--primary)]/25 disabled:cursor-not-allowed disabled:opacity-60";
 
 export default function ContactSection({
   user,
@@ -21,16 +21,6 @@ export default function ContactSection({
 }) {
   const [status, setStatus] = useState<Status>("idle");
   const [errorMsg, setErrorMsg] = useState("");
-
-  const name = user.about?.name ?? "User";
-
-  const tagline =
-    user.contact?.tagline ??
-    "A Software Engineer who has developed countless innovative solutions.";
-
-  const avatar =
-    user.contact?.avatar ?? user.about?.imageSrc ?? "/images/about1.jpg";
-
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
     setStatus("sending");
@@ -77,167 +67,145 @@ export default function ContactSection({
   }
 
   return (
-    <section id="contact" className="relative scroll-mt-24">
-      <div className="min-h-screen bg-[#020b12]">
-        <section className="mx-auto w-full max-w-7xl px-6 py-12">
-          <div className="grid gap-10 lg:grid-cols-[380px_1fr]">
-            {/* LEFT CARD */}
-            <aside className="rounded-3xl border border-white/10 bg-slate-900 p-8 shadow-[0_30px_90px_rgba(0,0,0,0.55)]">
-              <div className="relative mx-auto h-[240px] w-[240px] overflow-hidden rounded-2xl bg-black">
-                <Image
-                  src={avatar}
-                  alt={name}
-                  fill
-                  className="object-cover"
-                  sizes="240px"
-                  priority
-                />
+    <section
+      id="contact"
+      className="relative scroll-mt-24 overflow-hidden bg-[var(--page-bg)] py-20"
+    >
+      <div className="pointer-events-none absolute inset-x-0 top-0 h-56 bg-gradient-to-b from-[var(--page-glow)] to-transparent" />
+      <div className="mx-auto w-full max-w-6xl px-6">
+        <div className="text-center">
+          <h2 className="text-5xl font-black tracking-[-0.04em] text-[var(--text-main)] sm:text-6xl">
+            Let&apos;s Work{" "}
+            <span className="text-[var(--primary)]">Together</span>
+          </h2>
+          <p className="mx-auto mt-6 max-w-3xl text-lg font-semibold leading-8 text-[var(--text-soft)]">
+            Ready to build something extraordinary? I&apos;m currently available
+            for freelance projects, technical consulting, and full-time
+            opportunities.
+          </p>
+        </div>
 
-                <div className="pointer-events-none absolute inset-0 bg-gradient-to-tr from-[#ff3b00]/80 via-transparent to-transparent opacity-80" />
-              </div>
+        <div className="relative mt-16 grid gap-6 rounded-[30px] border border-[var(--border)] bg-gradient-to-br from-[#eef5ff] via-[#effaff] to-[#dff7ff] p-4 shadow-[0_18px_45px_rgb(var(--shadow-color)/0.08)] lg:grid-cols-[0.72fr_1fr] lg:p-6">
+          <aside className="rounded-3xl border border-[var(--border)] bg-white p-8 shadow-[0_12px_28px_rgb(var(--shadow-color)/0.07)] sm:p-10">
+            <h3 className="text-2xl font-black tracking-[-0.02em] text-[var(--text-main)]">
+              Get in Touch
+            </h3>
 
-              <h3 className="mt-7 text-3xl font-extrabold tracking-tight text-white">
-                {name}
-              </h3>
+            <div className="mt-9 space-y-8">
+              <InfoRow
+                icon={<Mail size={22} />}
+                label="Email"
+                title={user.contact?.email ?? "hello@portfolios.dev"}
+                href={`mailto:${user.contact?.email ?? ""}`}
+              />
+              <InfoRow
+                icon={<MapPin size={22} />}
+                label="Location"
+                title="Remote Worldwide"
+              />
+            </div>
 
-              <div className="mt-5 flex items-center gap-3">
-                <span className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-[#ff3b00] text-white">
-                  <Laptop size={18} />
-                </span>
+            <div className="my-10 h-px bg-[var(--border)]" />
 
-                <span className="text-sm font-semibold text-white/80">
-                  Available for Global Remote Projects
-                </span>
-              </div>
+            <p className="text-xs font-black uppercase tracking-[0.18em] text-[var(--text-muted)]">
+              Social
+            </p>
+            <div className="mt-5 flex items-center gap-4">
+              <SocialLink href={user.contact?.linkedin ?? "#"} label="LinkedIn">
+                <FaLinkedinIn />
+              </SocialLink>
+              <SocialLink href={user.contact?.github ?? "#"} label="GitHub">
+                <FaGithub />
+              </SocialLink>
+            </div>
+          </aside>
 
-              <p className="mt-6 max-w-[26ch] text-lg font-semibold leading-snug text-white/75">
-                {tagline}
-              </p>
+          <div className="rounded-[30px] border border-[var(--border)] bg-white p-8 shadow-[0_12px_28px_rgb(var(--shadow-color)/0.09)] sm:p-10">
+            <form onSubmit={handleSubmit} className="space-y-7">
+              <input
+                name="company"
+                tabIndex={-1}
+                autoComplete="off"
+                className="hidden"
+              />
 
-              <div className="mt-10 flex items-center gap-5 text-white/75">
-                <Link
-                  href={user.contact?.linkedin ?? "#"}
-                  target="_blank"
-                  className="rounded-full p-2 transition hover:bg-white/10 hover:text-white"
-                  aria-label="LinkedIn"
-                >
-                  <LinkedInIcon />
-                </Link>
-
-                <Link
-                  href={`mailto:${user.contact?.email ?? ""}`}
-                  className="rounded-full p-2 transition hover:bg-white/10 hover:text-white"
-                  aria-label="Email"
-                >
-                  <MailIcon />
-                </Link>
-
-                <Link
-                  href={user.contact?.github ?? "#"}
-                  target="_blank"
-                  className="rounded-full p-2 transition hover:bg-white/10 hover:text-white"
-                  aria-label="GitHub"
-                >
-                  <GithubIcon />
-                </Link>
-
-                <Link
-                  href="#"
-                  className="rounded-full p-2 transition hover:bg-white/10 hover:text-white"
-                  aria-label="Twitter"
-                >
-                  <TwitterIcon />
-                </Link>
-              </div>
-            </aside>
-
-            {/* RIGHT FORM */}
-            <div className="relative z-10 rounded-3xl border border-white/10 bg-slate-900 p-8 shadow-[0_30px_90px_rgba(0,0,0,0.55)] lg:p-10">
-              <div className="mb-10">
-                <h1 className="text-5xl font-extrabold tracking-tight text-white sm:text-6xl">
-                  LET&apos;S WORK
-                </h1>
-
-                <div className="mt-1 text-5xl font-extrabold tracking-tight text-white sm:text-6xl">
-                  TOGETHER
-                </div>
-              </div>
-
-              <form onSubmit={handleSubmit} className="space-y-6">
-                {/* Honeypot */}
-                <input
-                  name="company"
-                  tabIndex={-1}
-                  autoComplete="off"
-                  className="hidden"
-                />
-
-                <div className="grid gap-5 md:grid-cols-2">
-                  <Field label="Name">
-                    <input
-                      className={inputClass}
-                      placeholder="Your Name"
-                      name="name"
-                      required
-                      minLength={2}
-                      disabled={status === "sending"}
-                    />
-                  </Field>
-
-                  <Field label="Email">
-                    <input
-                      className={inputClass}
-                      placeholder="Your@email.com"
-                      type="email"
-                      name="email"
-                      required
-                      disabled={status === "sending"}
-                    />
-                  </Field>
-                </div>
-
-                <Field label="Message">
-                  <textarea
-                    className={textareaClass}
-                    placeholder="Message"
-                    name="message"
+              <div className="grid gap-6 md:grid-cols-2">
+                <Field label="Full Name">
+                  <input
+                    className={inputClass}
+                    placeholder="Jane Doe"
+                    name="name"
                     required
-                    minLength={10}
+                    minLength={2}
                     disabled={status === "sending"}
                   />
                 </Field>
 
-                <button
-                  type="submit"
-                  disabled={status === "sending"}
-                  className="h-14 w-full rounded-xl bg-[#5d6bff] text-sm font-bold text-white transition hover:brightness-110 active:brightness-95 disabled:cursor-not-allowed disabled:opacity-60"
-                >
-                  {status === "sending" ? "Sending..." : "Submit"}
-                </button>
+                <Field label="Email Address">
+                  <input
+                    className={inputClass}
+                    placeholder="jane@example.com"
+                    type="email"
+                    name="email"
+                    required
+                    disabled={status === "sending"}
+                  />
+                </Field>
+              </div>
 
-                {status === "sent" && (
-                  <p className="text-center text-sm text-white/80">
-                    Message sent. You’ll hear back soon.
-                  </p>
-                )}
-
-                {status === "error" && (
-                  <p className="text-center text-sm text-red-300">{errorMsg}</p>
-                )}
-
-                <p className="text-center text-xs text-white/60">
-                  Or email directly:{" "}
-                  <a
-                    className="font-semibold text-white/85 hover:text-white"
-                    href={`mailto:${user.contact?.email ?? ""}`}
+              <Field label="Subject">
+                <div className="relative">
+                  <select
+                    name="subject"
+                    className={`${inputClass} appearance-none pr-12`}
+                    defaultValue="Freelance Project"
+                    disabled={status === "sending"}
                   >
-                    {user.contact?.email ?? "email"}
-                  </a>
+                    <option>Freelance Project</option>
+                    <option>Technical Consulting</option>
+                    <option>Full-time Opportunity</option>
+                  </select>
+                  <ChevronDown
+                    size={20}
+                    className="pointer-events-none absolute right-4 top-1/2 -translate-y-1/2 text-[var(--text-soft)]"
+                  />
+                </div>
+              </Field>
+
+              <Field label="Message">
+                <textarea
+                  className={textareaClass}
+                  placeholder="Tell me about your project..."
+                  name="message"
+                  required
+                  minLength={10}
+                  disabled={status === "sending"}
+                />
+              </Field>
+
+              <button
+                type="submit"
+                disabled={status === "sending"}
+                className="inline-flex h-12 items-center justify-center gap-3 rounded-lg bg-[var(--primary)] px-7 text-sm font-black tracking-[0.12em] text-white transition hover:bg-[var(--primary-hover)] disabled:cursor-not-allowed disabled:opacity-60"
+              >
+                {status === "sending" ? "Sending..." : "Send Message"}
+                <Send size={17} />
+              </button>
+
+              {status === "sent" && (
+                <p className="text-sm font-semibold text-[#0f9f63]">
+                  Message sent. You&apos;ll hear back soon.
                 </p>
-              </form>
-            </div>
+              )}
+
+              {status === "error" && (
+                <p className="text-sm font-semibold text-red-600">
+                  {errorMsg}
+                </p>
+              )}
+            </form>
           </div>
-        </section>
+        </div>
       </div>
     </section>
   );
@@ -252,95 +220,76 @@ function Field({
 }) {
   return (
     <label className="block">
-      <span className="mb-2 block text-xs font-semibold tracking-wide text-white">
+      <span className="mb-3 block text-xs font-black uppercase tracking-[0.18em] text-[var(--text-muted)]">
         {label}
       </span>
-
       {children}
     </label>
   );
 }
 
-function GithubIcon() {
-  return (
-    <svg
-      width="20"
-      height="20"
-      viewBox="0 0 24 24"
-      fill="none"
-      aria-hidden="true"
-    >
-      <path
-        d="M9 19c-4 1.5-4-2.5-6-3m12 6v-3.2c0-.9.3-1.6.8-2-2.7-.3-5.6-1.3-5.6-5.8 0-1.3.5-2.4 1.2-3.2-.1-.3-.5-1.6.1-3.3 0 0 1-.3 3.3 1.2.9-.3 1.9-.4 2.9-.4s2 .1 2.9.4c2.3-1.5 3.3-1.2 3.3-1.2.6 1.7.2 3 .1 3.3.8.8 1.2 1.9 1.2 3.2 0 4.5-2.9 5.5-5.6 5.8.5.4.9 1.3.9 2.6V22"
-        stroke="currentColor"
-        strokeWidth="1.7"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-    </svg>
+function InfoRow({
+  icon,
+  label,
+  title,
+  subtitle,
+  href,
+}: {
+  icon: React.ReactNode;
+  label: string;
+  title: string;
+  subtitle?: string;
+  href?: string;
+}) {
+  const content = (
+    <>
+      <span className="grid h-12 w-12 shrink-0 place-items-center rounded-xl bg-[#eef3f9] text-[var(--primary)]">
+        {icon}
+      </span>
+      <span>
+        <span className="block text-xs font-black uppercase tracking-[0.18em] text-[var(--text-muted)]">
+          {label}
+        </span>
+        <span className="mt-1 block text-base font-semibold text-[var(--text-main)]">
+          {title}
+        </span>
+        {subtitle ? (
+          <span className="mt-1 block text-sm font-medium text-[var(--text-muted)]">
+            {subtitle}
+          </span>
+        ) : null}
+      </span>
+    </>
   );
+
+  if (href) {
+    return (
+      <Link href={href} className="flex items-center gap-4">
+        {content}
+      </Link>
+    );
+  }
+
+  return <div className="flex items-center gap-4">{content}</div>;
 }
 
-function LinkedInIcon() {
+function SocialLink({
+  href,
+  label,
+  children,
+}: {
+  href: string;
+  label: string;
+  children: React.ReactNode;
+}) {
   return (
-    <svg
-      width="20"
-      height="20"
-      viewBox="0 0 24 24"
-      fill="none"
-      aria-hidden="true"
+    <Link
+      href={href}
+      target="_blank"
+      className="grid h-10 w-10 place-items-center rounded-full border border-[var(--border)] text-[var(--text-soft)] transition hover:border-[var(--primary)] hover:text-[var(--primary)]"
+      aria-label={label}
     >
-      <path
-        d="M6 9v12M6 7.2a1.2 1.2 0 1 0 0-2.4 1.2 1.2 0 0 0 0 2.4ZM10 21v-7.2c0-2 1-3.2 2.8-3.2 1.6 0 2.4 1.1 2.7 2.1.2.5.2 1.2.2 1.9V21M18 21v-7.8"
-        stroke="currentColor"
-        strokeWidth="1.8"
-        strokeLinecap="round"
-      />
-    </svg>
-  );
-}
-
-function MailIcon() {
-  return (
-    <svg
-      width="20"
-      height="20"
-      viewBox="0 0 24 24"
-      fill="none"
-      aria-hidden="true"
-    >
-      <path
-        d="M4 6h16v12H4V6Z"
-        stroke="currentColor"
-        strokeWidth="1.8"
-        strokeLinejoin="round"
-      />
-
-      <path
-        d="M4 7l8 6 8-6"
-        stroke="currentColor"
-        strokeWidth="1.8"
-        strokeLinejoin="round"
-      />
-    </svg>
-  );
-}
-
-function TwitterIcon() {
-  return (
-    <svg
-      width="20"
-      height="20"
-      viewBox="0 0 24 24"
-      fill="none"
-      aria-hidden="true"
-    >
-      <path
-        d="M22 6c-.7.3-1.5.6-2.3.7.8-.5 1.4-1.2 1.7-2.1-.8.5-1.7.9-2.6 1.1A3.6 3.6 0 0 0 12.6 8c0 .3 0 .6.1.8-3.3-.2-6.2-1.8-8.2-4.4-.4.7-.6 1.4-.6 2.2 0 1.2.6 2.3 1.6 3-.6 0-1.2-.2-1.7-.5v.1c0 1.7 1.2 3.1 2.8 3.4-.3.1-.7.1-1 .1-.2 0-.5 0-.7-.1.5 1.5 2 2.6 3.7 2.6A7.2 7.2 0 0 1 2 18.2 10.2 10.2 0 0 0 7.6 20c6.6 0 10.2-5.5 10.2-10.2v-.5c.7-.5 1.4-1.2 1.9-1.9Z"
-        stroke="currentColor"
-        strokeWidth="1.5"
-        strokeLinejoin="round"
-      />
-    </svg>
+      {children}
+    </Link>
   );
 }
