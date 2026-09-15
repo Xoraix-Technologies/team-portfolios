@@ -1072,6 +1072,252 @@ export const USERS: UserData[] = [
       ],
     },
   },
+  {
+  slug: "kamran-maqbool",
+
+  hero: {
+    pill: "Python Developer",
+    name: "Kamran Maqbool",
+    mainTitle: "Python Developer",
+    subtitle: "Python | Django | AI/ML",
+    shortIntro:
+      "Python developer with 5+ years of experience building scalable backend applications using Django, Django REST Framework, FastAPI, and AI-powered integrations. Experienced in API development, background processing, cloud services, and automation.",
+    techPills: [
+      "Python",
+      "Django",
+      "Django REST Framework",
+      "FastAPI",
+      "AI/ML",
+      "Docker",
+      "PostgreSQL",
+      "LangChain",
+    ],
+    ctaText: "View My Work",
+    cvText: "Download CV",
+    resumeUrl: "/resumes/kamran_maqbool.pdf",
+    resumeFileName: "kamran_maqbool.pdf",
+  },
+
+  about: {
+    name: "Kamran Maqbool",
+    roleTitle: "Python Backend Developer",
+    imageSrc: "/images/laptop-bg.jpg",
+
+    about1:
+      "I am a Python backend developer with over 5 years of experience building scalable web applications using Django, Django REST Framework, FastAPI, and Flask. I specialize in backend APIs, third-party integrations, and cloud-ready services.",
+
+    about2:
+      "My recent work includes AI/ML integrations, Celery and RabbitMQ background processing, Redis caching, Docker, CI/CD pipelines, PostgreSQL, MongoDB, AWS/Azure cloud services, and automation using CRON jobs and asynchronous task processing.",
+
+    skillsLeft: [
+      { name: "Python", percent: 95, iconKey: "palette" },
+      { name: "Django", percent: 95, iconKey: "code" },
+      { name: "FastAPI", percent: 85, iconKey: "code" },
+      { name: "GitHub", percent: 85, iconKey: "github" },
+    ],
+
+    skillsRight: [
+      { name: "Django REST Framework", percent: 95, iconKey: "brackets" },
+      { name: "PostgreSQL", percent: 88, iconKey: "db" },
+      { name: "Docker", percent: 85, iconKey: "palette" },
+      { name: "Redis", percent: 80, iconKey: "db" },
+    ],
+
+    experience: [
+      {
+        title: "Python Developer",
+        company: "Transdata | Lahore",
+        date: "Oct 2022 - Present",
+        bullets: [
+          "Developed and maintained scalable backend systems using Django and Django REST Framework.",
+          "Collaborated with AI teams to integrate machine learning models into Django applications.",
+          "Integrated AI/ML components and implemented background task processing using Celery and RabbitMQ.",
+          "Built CRON jobs for keyword crawling and business process automation.",
+        ],
+      },
+      {
+        title: "Full Stack Developer",
+        company: "Linked Matrix | Lahore",
+        date: "Sep 2020 - Sep 2022",
+        bullets: [
+          "Focused primarily on backend development using Django and Django REST Framework.",
+          "Developed background workers and integrated external APIs.",
+          "Participated in application architecture discussions and deployment automation.",
+          "Worked on AI-based keyword searching tools and trend prediction concepts.",
+        ],
+      },
+      {
+        title: "Full Stack Developer",
+        company: "Geekinn | Lahore",
+        date: "Aug 2018 - Aug 2020",
+        bullets: [
+          "Developed HRMS, AutoShine, and freelance marketplace web applications.",
+          "Worked with Laravel, AngularJS, React.js, and Vue.js.",
+          "Contributed to both frontend and backend development in Agile teams.",
+        ],
+      },
+    ],
+  },
+
+  tech: {
+    heading: "Technologies I Work With",
+
+    description:
+      "I work across backend development, AI integrations, cloud infrastructure, databases, asynchronous processing, and API development to build scalable production systems.",
+
+    techs: [
+      {
+        title: "Python",
+        description:
+          "Backend development, automation, scripting, and scalable web services.",
+        iconKey: "code",
+      },
+      {
+        title: "Django / DRF",
+        description:
+          "REST APIs, authentication, scalable backend architecture, and business logic.",
+        iconKey: "server",
+      },
+      {
+        title: "FastAPI",
+        description:
+          "High-performance Python APIs with modern asynchronous support.",
+        iconKey: "server",
+      },
+      {
+        title: "React / Vue.js / AngularJS",
+        description:
+          "Frontend applications supporting backend-driven products.",
+        iconKey: "layers",
+      },
+      {
+        title: "PostgreSQL / MongoDB / MySQL",
+        description:
+          "Relational and NoSQL database design and optimization.",
+        iconKey: "db",
+      },
+      {
+        title: "Docker / CI/CD",
+        description:
+          "Containerization and automated deployment using GitHub Actions.",
+        iconKey: "github",
+      },
+      {
+        title: "AI / Machine Learning",
+        description:
+          "LangChain, TensorFlow, Scikit-learn, Pandas, NumPy, and AI-powered backend integrations.",
+        iconKey: "palette",
+      },
+      {
+        title: "Background Processing",
+        description:
+          "Celery, RabbitMQ, Redis, asynchronous jobs, and CRON automation.",
+        iconKey: "code",
+      },
+    ],
+  },
+
+  projects: {
+    heading: "My Projects",
+
+    description:
+      "Projects showcasing backend development, AI integrations, and scalable API development.",
+
+    items: [
+      {
+        id: "title-assistant-ai",
+        category: "AI SaaS",
+        title: "Title Assistant AI",
+        projectTitle: "Title Assistant AI - Real Estate Transaction Platform",
+        description:
+          "Built secure backend APIs supporting title and settlement processing for U.S. real estate transactions.",
+        tags: [
+          "Python",
+          "Django",
+          "Django REST Framework",
+          "REST API",
+        ],
+        image: "/images/laptop-bg.jpg",
+      },
+      {
+        id: "federation-ai",
+        category: "AI SaaS",
+        title: "Federation AI",
+        projectTitle: "Federation AI - AI Reporting Platform",
+        description:
+          "Integrated Slack, Jira, and MindsDB for predictive analytics, OAuth authentication, and automated report generation.",
+        tags: [
+          "Python",
+          "Django",
+          "AI",
+          "Slack",
+          "Jira",
+          "OAuth",
+          "MindsDB",
+        ],
+        image: "/images/laptop-bg.jpg",
+      },
+      {
+        id: "werp",
+        category: "Web app",
+        title: "WERP",
+        projectTitle: "WERP - Keyword Search Platform",
+        description:
+          "Built REST APIs, CRON jobs, keyword crawling, and automated trend collection from Twitter, Google, YouTube, and Reddit.",
+        tags: [
+          "Python",
+          "Django",
+          "REST API",
+          "PyTest",
+          "Automation",
+        ],
+        image: "/images/laptop-bg.jpg",
+      },
+    ],
+  },
+
+  contact: {
+    email: "kamranmaqbool37@gmail.com",
+    linkedin: "",
+    github: "",
+  },
+
+  skillsTools: {
+    title: "Skills & Tools",
+
+    tagline: "Backend engineering, AI integrations, and scalable API development",
+
+    description:
+      "Building production-ready backend systems using Python, Django, AI integrations, cloud infrastructure, and asynchronous processing.",
+
+    items: [
+      { label: "Python", iconKey: "python" },
+      { label: "Django", iconKey: "server" },
+      { label: "Django REST Framework", iconKey: "server" },
+      { label: "FastAPI", iconKey: "server" },
+      { label: "Flask", iconKey: "code" },
+      { label: "ReactJS", iconKey: "react" },
+      { label: "Vue.js", iconKey: "code" },
+      { label: "AngularJS", iconKey: "code" },
+      { label: "Docker", iconKey: "docker" },
+      { label: "Redis", iconKey: "db" },
+      { label: "Celery", iconKey: "code" },
+      { label: "RabbitMQ", iconKey: "code" },
+      { label: "PostgreSQL", iconKey: "db" },
+      { label: "MongoDB", iconKey: "mongodb" },
+      { label: "Git", iconKey: "git" },
+      { label: "GitHub", iconKey: "github" },
+      { label: "GitHub Actions", iconKey: "github" },
+      { label: "LangChain", iconKey: "code" },
+      { label: "TensorFlow", iconKey: "code" },
+      { label: "Scikit-learn", iconKey: "code" },
+      { label: "Pandas", iconKey: "code" },
+      { label: "NumPy", iconKey: "code" },
+      { label: "AWS", iconKey: "server" },
+      { label: "Azure", iconKey: "server" },
+    ],
+  },
+},
 
   {
     slug: "taha-bin-imran",
